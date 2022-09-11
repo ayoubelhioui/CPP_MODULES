@@ -18,5 +18,6 @@ int main()
 //    printed_data.erase(9);
 //    printed_data += '.';
 //    std::cout << printed_data << std::endl;
-    int a = atoi("1150");
+    char* s = "ayoub";
+    std::cout << s << std::endl;
 }

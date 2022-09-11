@@ -54,19 +54,45 @@ void    edit_and_print_data(Contact contact, int contact_index)
     std::cout << std::endl;
 }
 
-void	Search(PhoneBook &phonebook)
+bool looking_for_character(std::string entered_index)
 {
-    int i = 0;
+    size_t string_length;
 
-    std::string entered_index;
-    while (!phonebook.contacts[i].getFirstName().empty())
+    string_length = entered_index.length();
+    for (size_t i = 0; i < string_length; i++)
     {
-        edit_and_print_data(phonebook.contacts[i], i);
-        i++;
+        if (isdigit(entered_index.at(i)))
+            return (true);
     }
+    return (false);
+}
+
+int isValidIndex(std::string entered_index, int contacts_index)
+{
+    int j;
+    while (true)
+    {
+        j = atoi(entered_index.c_str());
+        if (entered_index.empty() ||  looking_for_character(entered_index) || !(j > 0 && j < 8))
+    }
+    return (j);
+}
+
+void	Search(PhoneBook &phonebook, int index)
+{
+    Contact contact;
+    std::string entered_index;
+
+    if (index == 0)
+    {
+        std::cout << "Empty Phonebook, try adding a new contact" << std::endl;
+        return ;
+    }
+    for (int i = 0; i < index && i < 8; i++)
+        edit_and_print_data(phonebook.contacts[i], i);
     std::cout << "Enter the index : ";
     getline(std::cin, entered_index);
-    Contact contact = phonebook.contacts[atoi(entered_index.c_str())];
+    contact = phonebook.contacts[isValidIndex(entered_index, index)];
     std::cout << contact.getFirstName() << std::endl;
     std::cout << contact.getLastName() << std::endl;
     std::cout << contact.getNickName() << std::endl;
@@ -76,27 +102,19 @@ void	Search(PhoneBook &phonebook)
 
 int main()
 {
-	PhoneBook phonebook;
-	int index = 0;
-	std::string entered_data;
-	while (true)
-	{
-		std::cout << "Please Enter A Command, ADD, SEARCH or EXIT: ";
-		getline(std::cin, entered_data);
-		if (entered_data == "ADD")
-			phonebook.addContact(getting_input(), index++);
-		else if (entered_data == "SEARCH")
-			Search(phonebook);
-		else if (entered_data == "EXIT")
-			break ;
-	}
-//	 for (int i = 0; i < 1; i++)
-//	 {
-//	 	std::cout << " the first name :" << phonebook.contacts[i].getFirstName() << std::endl;
-//	 	std::cout << " the last name :" << phonebook.contacts[i].getLastName() << std::endl;
-//	 	std::cout << " the nick name :" << phonebook.contacts[i].getNickName() << std::endl;
-//	 	std::cout << " the phone number :" << phonebook.contacts[i].getPhoneNumber() << std::endl;
-//	 	std::cout << " the Darkest Secret :" << phonebook.contacts[i].getDarkestSecret() << std::endl;
-//	 }
-	
+    PhoneBook phonebook;
+    int index = 0;
+    std::string entered_data;
+    while (true)
+    {
+        std::cout << "Please Enter A Command, ADD, SEARCH or EXIT: ";
+        getline(std::cin, entered_data);
+        if (entered_data == "ADD")
+            phonebook.addContact(getting_input(), index++);
+        else if (entered_data == "SEARCH")
+            Search(phonebook, index);
+        else if (entered_data == "EXIT")
+            break ;
+    }
+
 }
