@@ -1,119 +1,101 @@
 #include "Phonebook.hpp"
 
-void	handling_wrong_input(std::string &entered_data, std::string attribute)
+void	handling_wrong_input(std::string &enteredData, std::string attribute)
 {
-    getline(std::cin, entered_data);
-	while (entered_data.empty())
+    getline(std::cin, enteredData);
+	while (enteredData.empty())
 	{
         std::cout << "Please Enter the " << attribute << " : ";
-        getline(std::cin, entered_data);
+        getline(std::cin, enteredData);
     }
 }
+
 Contact getting_input()
 {
 	Contact contact;
-	std::string entered_data;
+	std::string enteredData;
 	std::cout << "Enter The First Name :";
-	handling_wrong_input(entered_data, "first name");
-    contact.setFirstName(entered_data);
+	handling_wrong_input(enteredData, "first name");
+    contact.setFirstName(enteredData);
     std::cout << "Enter the last name :";
-	handling_wrong_input(entered_data, "last name");
-	contact.setLastName(entered_data);
+	handling_wrong_input(enteredData, "last name");
+	contact.setLastName(enteredData);
 	std::cout << "Enter the nickname :";
-	handling_wrong_input(entered_data, "nickname");
-	contact.setNickName(entered_data);
+	handling_wrong_input(enteredData, "nickname");
+	contact.setNickName(enteredData);
 	std::cout << "Enter the phone number:";
-	handling_wrong_input(entered_data, "phone number");
-	contact.setPhoneNumber(entered_data);
+	handling_wrong_input(enteredData, "phone number");
+	contact.setPhoneNumber(enteredData);
 	std::cout << "Enter the Darkest Secret :";
-	handling_wrong_input(entered_data, "Darkest Secret");
-	contact.setDarkestSecret(entered_data);
+	handling_wrong_input(enteredData, "Darkest Secret");
+	contact.setDarkestSecret(enteredData);
 	return (contact);
 }
 
-void    editing_data(std::string &printed_data)
+void    editing_data(std::string &printed_data, std::string attribute)
 {
     if (printed_data.length() > 10)
     {
         printed_data.erase(9);
         printed_data += '.';
     }
-    std::cout << std::setw(10) << printed_data << "|";
+    std::cout << attribute << std::setw(10) << printed_data << "|";
 }
 
 void    edit_and_print_data(Contact contact, int contact_index)
 {
     std::string printed_data;
-    std::cout << std::setw(10) << contact_index << "|";
+    std::cout << "index : " << std::setw(10) << contact_index << "|";
     printed_data = contact.getFirstName();
-    editing_data(printed_data);
+    editing_data(printed_data, " First Name : ");
     printed_data = contact.getLastName();
-    editing_data(printed_data);
+    editing_data(printed_data, " Last Name : ");
     printed_data = contact.getNickName();
-    editing_data(printed_data);
+    editing_data(printed_data, " Nick Name : ");
     std::cout << std::endl;
 }
 
-bool looking_for_character(std::string entered_index)
+void    printingByIndex(Contact contact)
 {
-    size_t string_length;
-
-    string_length = entered_index.length();
-    for (size_t i = 0; i < string_length; i++)
-    {
-        if (isdigit(entered_index.at(i)))
-            return (true);
-    }
-    return (false);
+    std::cout << "First Name : " << contact.getFirstName() << std::endl;
+    std::cout << "Last Name : " << contact.getLastName() << std::endl;
+    std::cout << "NickName : " << contact.getNickName() << std::endl;
+    std::cout << "Phone Number : " << contact.getPhoneNumber() << std::endl;
+    std::cout << "Darkest Secret : " << contact.getDarkestSecret() << std::endl;
 }
 
-int isValidIndex(std::string entered_index, int contacts_index)
-{
-    int j;
-    while (true)
-    {
-        j = atoi(entered_index.c_str());
-        if (entered_index.empty() ||  looking_for_character(entered_index) || !(j > 0 && j < 8))
-    }
-    return (j);
-}
-
-void	Search(PhoneBook &phonebook, int index)
+void    checkAndSearch(PhoneBook phonebook, int contactIndex)
 {
     Contact contact;
-    std::string entered_index;
+    std::string enteredIndex;
 
-    if (index == 0)
+    if (contactIndex == 0)
     {
         std::cout << "Empty Phonebook, try adding a new contact" << std::endl;
         return ;
     }
-    for (int i = 0; i < index && i < 8; i++)
+    for (int i = 0; i < contactIndex && i < MAX_SIZE; i++)
         edit_and_print_data(phonebook.contacts[i], i);
     std::cout << "Enter the index : ";
-    getline(std::cin, entered_index);
-    contact = phonebook.contacts[isValidIndex(entered_index, index)];
-    std::cout << contact.getFirstName() << std::endl;
-    std::cout << contact.getLastName() << std::endl;
-    std::cout << contact.getNickName() << std::endl;
-    std::cout << contact.getPhoneNumber() << std::endl;
-    std::cout << contact.getDarkestSecret() << std::endl;
+    getline(std::cin, enteredIndex);
+    contact = phonebook.Search(phonebook, contactIndex, enteredIndex);
+    printingByIndex(contact);
 }
 
 int main()
 {
-    PhoneBook phonebook;
+    PhoneBook phoneBook;
+    std::string enteredData;
     int index = 0;
-    std::string entered_data;
     while (true)
     {
         std::cout << "Please Enter A Command, ADD, SEARCH or EXIT: ";
-        getline(std::cin, entered_data);
-        if (entered_data == "ADD")
-            phonebook.addContact(getting_input(), index++);
-        else if (entered_data == "SEARCH")
-            Search(phonebook, index);
-        else if (entered_data == "EXIT")
+        getline(std::cin, enteredData);
+        if (enteredData == "ADD")
+            phoneBook.addContact(getting_input(), index++);
+        else if (enteredData == "SEARCH")
+            checkAndSearch(phoneBook, index);
+        else if (enteredData == "EXIT")
             break ;
     }
 
