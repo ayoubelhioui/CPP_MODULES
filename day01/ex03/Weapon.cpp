@@ -1,18 +1,14 @@
-#ifndef WEAPON_CPP
-#define WEAPON_CPP
+#include "Weapon.hpp"
 
-#include <iostream>
-class Weapon{
-    private:
-        std::string type;
-    public:
-        void setType(std::string Type){
-            type = Type;
-        }
-        const std::string& getType(){
-            const std::string &typeRef = type;
-            return (typeRef);
-        }
+Weapon::Weapon(std::string Type) {
+    type = Type;
+}
 
-};
-#endif
+void    Weapon::setType(std::string Type){
+    type = Type;
+}
+
+const std::string& Weapon::getType() {
+    const std::string &typeRef = type;
+    return (typeRef);
+}
