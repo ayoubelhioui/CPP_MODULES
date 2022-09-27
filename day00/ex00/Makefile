@@ -1,19 +1,17 @@
-SRC := megaphone.cpp main.cpp
+SRC := megaphone.cpp
 NAME := megaphone
-CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98
-SRC_O := $(SRC:.cpp=.o)
+STANDARD := -std=c++98
+CXXFLAGS := -Wall -Wextra -Werror
+OBJECT_FILES := $(SRC:.cpp=.o)
 
-all : $(NAME)
-$(NAME) : $(SRC_O)
-	@printf "1\n"
-	@$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
+all: $(NAME)
+$(NAME): $(OBJECT_FILES)
+	@$(CXX) $(OBJECT_FILES) -o $(NAME)
 %.o : %.cpp
-	@printf "2\n"
-	@$(CXX) $(CXXFLAGS) -c $?
-	echo "-> " + $?
+	@$(CXX) $(CXXFLAGS) $(STANDARD) -c $?
 clean:
-	@rm -f $(SRC_O)
-fclean:clean
-	@rm -f $(NAME)
-re: fclean all
+	@$(RM) $(OBJECT_FILES)
+fclean : clean
+	@$(RM) $(NAME)
+re : fclean all
+.PHONY : clean fclean re
