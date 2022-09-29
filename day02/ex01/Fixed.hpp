@@ -1,5 +1,5 @@
-#ifndef FIXED_CPP
-#define FIXED_CPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 #include <iostream>
 #include <cmath>
 class Fixed{
@@ -12,6 +12,7 @@ class Fixed{
         Fixed(const Fixed &oldObj);
         Fixed(const float data);
         ~Fixed();
+        Fixed operator -(const Fixed &oldObj);
         Fixed &operator= (const Fixed &oldObj);
         int getRawBits() const ;
     float toFloat( void ) const;

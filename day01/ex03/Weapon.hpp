@@ -3,11 +3,11 @@
 
 #include <iostream>
 class Weapon{
+    private:
+        std::string type;
     public:
         Weapon(std::string Type);
         void setType(std::string Type);
         const std::string& getType();
-    private:
-        std::string type;
 };
 #endif

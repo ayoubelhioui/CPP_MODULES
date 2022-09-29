@@ -1,16 +1,17 @@
-SRC = Phonebook.cpp Contact.cpp main.cpp
-CC = c++
-NAME = phonebook
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC_O = $(SRC:.cpp=.o)
+SRC := main.cpp Phonebook.cpp Contact.cpp
+NAME := phonebook
+STANDARD := -std=c++98
+CXXFLAGS := -Wall -Wextra -Werror
+OBJECT_FILES := $(SRC:.cpp=.o)
 
-all : $(NAME)
-$(NAME) : $(SRC_O)
-	$(CC) $(SRC_O) -o $(NAME)
+all: $(NAME)
+$(NAME): $(OBJECT_FILES)
+	$(CXX) $(OBJECT_FILES) -o $(NAME)
 %.o : %.cpp
-	$(CC) $(CFLAGS) -c $?
+	$(CXX) $(CXXFLAGS) $(STANDARD) -c $?
 clean:
-	@rm -f $(SRC_O)
-fclean:clean
-	@rm -f $(NAME)
-re: fclean all
+	$(RM) $(OBJECT_FILES)
+fclean : clean
+	$(RM) $(NAME)
+re : fclean all
+.PHONY : clean fclean re

@@ -3,7 +3,9 @@
 #include <string>
 #include <iostream>
 
-
+#define ADD "ADD"
+#define SEARCH "SEARCH"
+#define EXIT "EXIT"
 class Contact{
 	private:
 		std::string firstName;
@@ -12,16 +14,17 @@ class Contact{
 		std::string phoneNumber;
 		std::string darkestSecret;
 	public:
-		void setFirstName(std::string data);
-		std::string getFirstName();
-		void setLastName(std::string data);
-		std::string getLastName();
-		void setNickName(std::string data);
-		std::string getNickName();
-		void setPhoneNumber(std::string data);
-		std::string getPhoneNumber();
-		void setDarkestSecret(std::string data);
-		std::string getDarkestSecret();
+    std::string getFirstName() const;
+    std::string getLastName() const;
+    std::string getNickName() const;
+    std::string getPhoneNumber() const;
+    std::string getDarkestSecret() const;
+    void setFirstName(std::string data);
+    void setLastName(std::string data);
+    void setNickName(std::string data);
+    void setPhoneNumber(std::string data);
+    void setDarkestSecret(std::string data);
+
 };
 
 #endif

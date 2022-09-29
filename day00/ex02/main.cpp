@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hiou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/28 16:00:28 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/09/28 16:00:31 by ael-hiou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <vector>
 #include <algorithm>
 #include <functional>
@@ -5,7 +17,6 @@
 
 
 int		main( void ) {
-
 	typedef std::vector<Account::t>							  accounts_t;
 	typedef std::vector<int>								  ints_t;
 	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;

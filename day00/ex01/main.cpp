@@ -1,33 +1,69 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hiou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/28 15:59:41 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/09/28 15:59:59 by ael-hiou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Phonebook.hpp"
 
-void	handling_wrong_input(std::string &enteredData, std::string attribute)
+void    checkForEmptyInput(std::string &enteredData, std::string attribute)
 {
-    getline(std::cin, enteredData);
-	while (enteredData.empty())
-	{
+    while (enteredData.empty())
+    {
         std::cout << "Please Enter the " << attribute << " : ";
         getline(std::cin, enteredData);
     }
 }
 
-Contact getting_input()
+void    phoneNumberChecking(std::string &enteredData, std::string attribute)
+{
+    checkForEmptyInput(enteredData, attribute);
+    for (size_t i = 0; i < enteredData.length();i++)
+    {
+        if (!isdigit(enteredData.at(i)))
+        {
+            std::cout << "Please Enter the Phone Number : ";
+            i = -1;
+            getline(std::cin, enteredData);
+            checkForEmptyInput(enteredData, attribute);
+        }
+    }
+}
+
+void	handlingWrongInput(std::string &enteredData, std::string attribute)
+{
+    getline(std::cin, enteredData);
+    if (attribute == "phone number")
+        phoneNumberChecking(enteredData, attribute);
+    else
+        checkForEmptyInput(enteredData, attribute);
+}
+
+Contact creatingTheObject()
 {
     Contact contact;
 	std::string enteredData;
+
 	std::cout << "Enter The First Name :";
-	handling_wrong_input(enteredData, "first name");
+	handlingWrongInput(enteredData, "first name");
     contact.setFirstName(enteredData);
     std::cout << "Enter the last name :";
-	handling_wrong_input(enteredData, "last name");
+	handlingWrongInput(enteredData, "last name");
 	contact.setLastName(enteredData);
 	std::cout << "Enter the nickname :";
-	handling_wrong_input(enteredData, "nickname");
+	handlingWrongInput(enteredData, "nickname");
 	contact.setNickName(enteredData);
 	std::cout << "Enter the phone number:";
-	handling_wrong_input(enteredData, "phone number");
+	handlingWrongInput(enteredData, "phone number");
 	contact.setPhoneNumber(enteredData);
 	std::cout << "Enter the Darkest Secret :";
-	handling_wrong_input(enteredData, "Darkest Secret");
+	handlingWrongInput(enteredData, "Darkest Secret");
 	contact.setDarkestSecret(enteredData);
 	return (contact);
 }
@@ -36,16 +72,18 @@ int main()
 {
     PhoneBook phoneBook;
     std::string enteredData;
-    int index = 0;
+    int contactIndex = 0;
+
     while (true)
     {
         std::cout << "Please Enter A Command, ADD, SEARCH or EXIT: ";
-        getline(std::cin, enteredData);
+        std::getline(std::cin, enteredData);
         if (enteredData == ADD){
-            phoneBook.addContact(getting_input(), index++);
+            phoneBook.addContact(creatingTheObject(), contactIndex);
+            contactIndex++;
         }
         else if (enteredData == SEARCH){
-            phoneBook.checkAndSearch(phoneBook, index);
+            phoneBook.checkAndSearch(contactIndex);
         }
         else if (enteredData == EXIT){
             break ;

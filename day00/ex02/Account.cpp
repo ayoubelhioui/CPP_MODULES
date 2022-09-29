@@ -1,5 +1,16 @@
-#include "Account.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hiou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/28 16:00:19 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/09/28 16:00:22 by ael-hiou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "Account.hpp"
 #include <iostream>
 
 int Account::_nbAccounts = 0;
@@ -23,10 +34,11 @@ int	Account::getNbWithdrawals( void ){
     return (_totalNbWithdrawals);
 }
 
-void	Account:: _displayTimestamp( void ){
+void	Account::_displayTimestamp( void ){
     time_t    rawtime;
     struct    tm * timeinfo;
     char    buff[20];
+
 
     time(&rawtime);
     timeinfo = localtime(&rawtime);
@@ -34,7 +46,7 @@ void	Account:: _displayTimestamp( void ){
     std::cout << "[" << buff << "] ";
 }
 
-void	Account:: displayStatus( void ) const
+void	Account::displayStatus( void ) const
 {
     Account::_displayTimestamp();
     std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;

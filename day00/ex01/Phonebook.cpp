@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hiou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/28 15:59:05 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/09/28 15:59:13 by ael-hiou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Phonebook.hpp"
 
-void PhoneBook::addContact(Contact contact, int index)
+void PhoneBook::addContact(const Contact &contact, int &index)
 {
 	contacts[index % MAX_SIZE].setFirstName(contact.getFirstName());
 	contacts[index % MAX_SIZE].setLastName(contact.getLastName());
@@ -10,30 +22,32 @@ void PhoneBook::addContact(Contact contact, int index)
 	contacts[index % MAX_SIZE].setDarkestSecret(contact.getDarkestSecret());
 }
 
-void    PhoneBook::editing_data(std::string &printed_data, std::string attribute)
+void    PhoneBook::editingData(std::string &printed_data)
 {
     if (printed_data.length() > 10)
     {
         printed_data.erase(9);
         printed_data += '.';
     }
-    std::cout << attribute << std::setw(10) << printed_data << "|";
+    std::cout << std::setw(10) << printed_data << "|";
 }
 
-void    PhoneBook::edit_and_print_data(Contact contact, int contact_index)
+void    PhoneBook::editAndPrintData(const Contact &contact, int &contact_index)
 {
-    std::string printed_data;
-    std::cout << "index : " << std::setw(10) << contact_index << "|";
-    printed_data = contact.getFirstName();
-    editing_data(printed_data, " First Name : ");
-    printed_data = contact.getLastName();
-    editing_data(printed_data, " Last Name : ");
-    printed_data = contact.getNickName();
-    editing_data(printed_data, " Nick Name : ");
+    std::string printedData;
+
+
+    std::cout << std::setw(10) << contact_index << "|";
+    printedData = contact.getFirstName();
+    editingData(printedData);
+    printedData = contact.getLastName();
+    editingData(printedData);
+    printedData = contact.getNickName();
+    editingData(printedData);
     std::cout << std::endl;
 }
 
-void    PhoneBook::printingByIndex(Contact contact)
+void    PhoneBook::printingByIndex(const Contact &contact)
 {
     std::cout << "First Name : " << contact.getFirstName() << std::endl;
     std::cout << "Last Name : " << contact.getLastName() << std::endl;
@@ -42,7 +56,7 @@ void    PhoneBook::printingByIndex(Contact contact)
     std::cout << "Darkest Secret : " << contact.getDarkestSecret() << std::endl;
 }
 
-void    PhoneBook::checkAndSearch(PhoneBook phonebook, int contactIndex)
+void    PhoneBook::checkAndSearch(int &contactIndex)
 {
     Contact contact;
     std::string enteredIndex;
@@ -52,17 +66,19 @@ void    PhoneBook::checkAndSearch(PhoneBook phonebook, int contactIndex)
         std::cout << "Empty Phonebook, try adding a new contact" << std::endl;
         return ;
     }
+    std::cout << "---------------------------------------------" << std::endl;
+    std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
     for (int i = 0; i < contactIndex && i < MAX_SIZE; i++)
-        edit_and_print_data(phonebook.contacts[i], i);
+        editAndPrintData(this->contacts[i], i);
     std::cout << "Enter the index : ";
     getline(std::cin, enteredIndex);
-    contact = phonebook.Search(phonebook, contactIndex, enteredIndex);
+    contact = this->getContactByIndex(contactIndex, enteredIndex);
     printingByIndex(contact);
 }
 
 
-
-bool PhoneBook::lookingForCharacters(std::string enteredIndex)
+bool PhoneBook::lookingForCharacters(const std::string &enteredIndex)
 {
     size_t string_length;
 
@@ -75,9 +91,10 @@ bool PhoneBook::lookingForCharacters(std::string enteredIndex)
     return (false);
 }
 
-int PhoneBook::isValidIndex(std::string enteredIndex, int contactIndex)
+int PhoneBook::isValidIndex(std::string &enteredIndex, const int &contactIndex)
 {
     int validIndex;
+
     while (true)
     {
         validIndex = atoi(enteredIndex.c_str());
@@ -92,12 +109,10 @@ int PhoneBook::isValidIndex(std::string enteredIndex, int contactIndex)
     return (validIndex);
 }
 
-Contact PhoneBook::Search(PhoneBook phonebook, int contactIndex, std::string enteredIndex)
+Contact PhoneBook::getContactByIndex(const int &contactIndex, std::string &enteredIndex)
 {
     int     validIndex;
-    Contact contact;
 
     validIndex = isValidIndex(enteredIndex, contactIndex);
-    contact = phonebook.contacts[validIndex];
-    return (contact);
+    return (this->contacts[validIndex]);
 }

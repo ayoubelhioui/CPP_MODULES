@@ -1,12 +1,10 @@
 #include "Zombie.hpp"
 
-void ma()
-{
-
-}
 int main()
 {
-   Zombie *z = newZombie("issam");
-   z->announce();
-   delete z;
+    Zombie *z = newZombie("issam");
+    Zombie a("ayoub");
+    a.announce();
+    z->announce();
+    delete z;
 }
