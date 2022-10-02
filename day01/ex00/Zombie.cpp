@@ -6,18 +6,16 @@ Zombie* newZombie( std::string Name ) {
     return (zombie);
 }
 
-
-void Zombie::announce(void){
-    std::cout << name << "BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
 void   randomChump( std::string Name ){
     Zombie zombie(Name);
     zombie.announce();
 }
 
-Zombie::Zombie(std::string Name) {
-    name = Name;
+void Zombie::announce(void){
+    std::cout << name << "BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+Zombie::Zombie(std::string Name) : name(Name){
     std::cout << "constructor called" << std::endl;
 }
 

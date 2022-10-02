@@ -16,11 +16,11 @@ void    Harl::info(void){
     std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
 
-void    Harl::printing(int startIndex){
-    void (Harl::*memFn[4])(void) = {&Harl::debug, &Harl::error, &Harl::warning, &Harl::info};
+void    Harl::printing(int &startIndex){
+    memFn memPt = {&Harl::debug, &Harl::error, &Harl::warning, &Harl::info};
     while (startIndex < 4)
     {
-        (this->*memFn[startIndex])();
+        (this->*memPt[startIndex])();
         startIndex++;
     }
 }

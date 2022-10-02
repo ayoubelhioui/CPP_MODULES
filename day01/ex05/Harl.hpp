@@ -9,6 +9,8 @@ class Harl{
         void    warning( void );
         void    error( void );
     public:
-    void    complain(std::string level);
+        void    complain(std::string level);
 };
+
+typedef void (Harl::*memFn[4])(void);
 #endif

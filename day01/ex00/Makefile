@@ -1,4 +1,4 @@
-SRC := Zombie.cpp main.cpp zombieHorde.cpp
+SRC := Zombie.cpp main.cpp
 NAME := zombie
 STANDARD := -std=c++98
 CXXFLAGS := -Wall -Wextra -Werror

@@ -9,7 +9,8 @@ class Harl{
         void    warning( void );
         void    error( void );
     public:
-        void    printing(int startIndex);
+        void    printing(int &startIndex);
 };
 
+typedef void (Harl::*memFn[4])(void);
 #endif

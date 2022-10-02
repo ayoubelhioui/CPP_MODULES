@@ -9,6 +9,5 @@ void    Weapon::setType(std::string Type){
 }
 
 const std::string& Weapon::getType() {
-    const std::string &typeRef = type;
-    return (typeRef);
+    return (type);
 }

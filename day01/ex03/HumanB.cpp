@@ -1,9 +1,7 @@
 #include "HumanB.hpp"
 
 
-HumanB::HumanB(std::string Name) : weapon(NULL){
-    name = Name;
-}
+HumanB::HumanB(std::string Name) : name(Name), weapon(NULL){}
 
 void HumanB ::setWeapon(Weapon &w){
     weapon = &w;
