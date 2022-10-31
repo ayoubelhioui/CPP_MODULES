@@ -1,6 +1,7 @@
 #include "Weapon.hpp"
 
 Weapon::Weapon(std::string Type) {
+    std::cout << "con" << std::endl;
     type = Type;
 }
 

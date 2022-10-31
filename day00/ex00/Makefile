@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ael-hiou <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 15:58:23 by ael-hiou          #+#    #+#              #
-#    Updated: 2022/09/28 15:58:33 by ael-hiou         ###   ########.fr        #
+#    Updated: 2022/10/03 16:13:47 by ael-hiou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ all: $(NAME)
 $(NAME): $(OBJECT_FILES)
 	$(CXX) $(OBJECT_FILES) -o $(NAME)
 %.o : %.cpp
-	$(CXX) $(CXXFLAGS) $(STANDARD) -c $?
+	$(CXX) $(CXXFLAGS) $(STANDARD) -c $^
 clean:
 	$(RM) $(OBJECT_FILES)
 fclean : clean
