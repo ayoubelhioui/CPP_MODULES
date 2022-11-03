@@ -16,9 +16,9 @@ Fixed::~Fixed() {
 }
 
 Fixed &Fixed::operator=(const Fixed &oldObj){
-    std::cout << "Copy assignment operator called" << std::endl;
     setRawBits(oldObj.getRawBits());
-    return (*this);
+    std::cout << "Copy assignment operator called" << std::endl;
+    return *this;
 }
 
 void    Fixed::setRawBits(const int raw) {

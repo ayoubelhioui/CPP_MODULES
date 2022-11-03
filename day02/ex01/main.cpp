@@ -1,5 +1,34 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/01 17:49:29 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/11/03 17:52:28 by ael-hiou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
+
+class test{
+    private:
+        int value;
+    public:
+        test(){
+            std::cout << "constructor calleed" << std::endl;
+        }
+        int getValue(){return value;};
+        void setValue(int v){value = v;}
+        void    print(){
+            std::cout <<  getValue() << std::endl;
+        }
+};
+std::ostream &operator<<(std::ostream &ost,  test &t){
+    ost << t.getValue();
+    return (ost);
+}
 
 int main( void ) {
     Fixed a;
@@ -15,5 +44,5 @@ int main( void ) {
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
     std::cout << "c is " << c.toInt() << " as integer" << std::endl;
     std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-return 0;
+    return 0;
 }

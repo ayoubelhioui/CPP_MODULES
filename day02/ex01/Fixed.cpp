@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/01 17:49:33 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/11/03 15:47:43 by ael-hiou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
-Fixed::Fixed(const int data) : rawBits(data * (1 << fractionalBits))
+Fixed::Fixed(const int data) : rawBits(data << fractionalBits)
 {
     std::cout << "Int constructor called" << std::endl;
-};
+}
 
-Fixed::Fixed(const float data) : rawBits(roundf(data * (1 << fractionalBits)))
+Fixed::Fixed(const float data) : rawBits(roundf(data * (CANT_SHIFT)))
 {
     std::cout << "Float constructor called" << std::endl;
-};
+}
 
 Fixed::Fixed(const Fixed &oldObj)
 {
     std::cout << "Copy constructor called" << std::endl;
-    Fixed::setRawBits(oldObj.getRawBits());
+    *this = oldObj;
 }
 
 Fixed::Fixed()
@@ -30,7 +42,7 @@ std::ostream& operator<< (std::ostream &ost, const Fixed &fixed)
 
 float Fixed::toFloat( void ) const
 {
-    return (((float) getRawBits() / (1 << fractionalBits)));
+    return (((float) getRawBits() / (CANT_SHIFT)));
 }
 
 int Fixed::toInt() const
@@ -46,7 +58,7 @@ Fixed::~Fixed()
 Fixed &Fixed::operator= (const Fixed &oldObj)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    Fixed::setRawBits(oldObj.getRawBits());
+    setRawBits(oldObj.getRawBits());
     return (*this);
 }
 

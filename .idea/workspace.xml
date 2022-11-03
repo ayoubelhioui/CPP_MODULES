@@ -1,54 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated />
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d45da46-867e-4f81-af6d-0f478250d8f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-5322d833d9ccb0a5104a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-fe673ffef515f1649e72.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-5ff1c1e022ce82b77947.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-09-10T16-17-06-0491.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CPP-Debug-755df268169c29c19c94.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-ea6cc6b990725b33aaf8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day00/ex00/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/day00/ex00/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day00/ex00/megaphone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day00/ex00/megaphone.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day01/ex03/Weapon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day01/ex03/Weapon.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day01/ex03/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day01/ex03/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex00/Fixed.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day02/ex00/Fixed.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex00/Fixed.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day02/ex00/Fixed.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex00/Fixed.o" beforeDir="false" afterPath="$PROJECT_DIR$/day02/ex00/Fixed.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex00/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/day02/ex00/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex00/fixed" beforeDir="false" afterPath="$PROJECT_DIR$/day02/ex00/fixed" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex00/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day02/ex00/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex00/main.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex00/test.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex00/zombie" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex01/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/day02/ex01/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/ex01/fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +28,14 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,7 +57,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Project.color": "000233",
+    "Project.color": "461142",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -92,13 +71,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/day02/ex01" />
+      <recent name="$PROJECT_DIR$/day02/ex00" />
       <recent name="$PROJECT_DIR$/day02" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -111,6 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667217882221</updated>
       <workItem from="1667217889396" duration="5290000" />
+      <workItem from="1667224310572" duration="1228000" />
     </task>
     <servers />
   </component>
