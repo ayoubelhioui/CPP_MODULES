@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:17:03 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/03 18:39:28 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/04 18:41:13 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,14 +113,14 @@ Fixed Fixed::operator +(const Fixed &oldObj)
 Fixed Fixed::operator *(const Fixed &oldObj)
 {
     Fixed returnedPoint;
-    returnedPoint.setRawBits(getRawBits() * oldObj.getRawBits());
+    returnedPoint.setRawBits((getRawBits() * oldObj.getRawBits()) / CANT_SHIFT);
     return (returnedPoint);
 }
 
-Fixed Fixed::operator /(const Fixed &oldObj)
+Fixed Fixed::operator / (const Fixed &oldObj)
 {
     Fixed returnedPoint;
-    returnedPoint.setRawBits(this->getRawBits() / oldObj.getRawBits());
+    returnedPoint.setRawBits((this->getRawBits() / CANT_SHIFT)  / oldObj.getRawBits());
     return (returnedPoint);
 }
 
@@ -130,24 +130,27 @@ Fixed &Fixed::operator ++()
     return (*this);
 }
 
-Fixed   &Fixed::operator ++(int)
+Fixed   Fixed::operator ++(int)
 {
-    
+    Fixed temp;
+    temp.setRawBits(getRawBits());
     setRawBits(getRawBits() + (EPSILON * CANT_SHIFT));
-    return (*this);
+    return (temp);
 }
 
 Fixed   &Fixed::operator --()
 {
-    setRawBits(getRawBits() - EPSILON);
+    setRawBits(getRawBits() - (EPSILON * CANT_SHIFT));
     return (*this);
 }
 
-Fixed   &Fixed::operator --(int)
+Fixed   Fixed::operator --(int)
 {
-    --rawBits;
-    return (*this);
-}
+    Fixed temp;
+    temp.setRawBits(getRawBits());
+    setRawBits(getRawBits() - (EPSILON * CANT_SHIFT));
+    return (temp);
+}   
 
 const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
