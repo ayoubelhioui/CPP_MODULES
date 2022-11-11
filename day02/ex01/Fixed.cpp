@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:49:33 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/03 15:47:43 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/10 11:28:46 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Fixed::Fixed(const Fixed &oldObj)
 
 Fixed::Fixed()
 {
-    rawBits = 0;
+    rawBits = ZERO;
     std::cout << "Default constructor called" << std::endl;
 }
 

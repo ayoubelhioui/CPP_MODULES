@@ -6,11 +6,12 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:17:03 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/04 18:41:13 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:45:59 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
 Fixed::Fixed(const int data) : rawBits(data << fractionalBits)
 {
     // std::cout << "Int constructor called" << std::endl;
@@ -24,7 +25,7 @@ Fixed::Fixed(const float data) : rawBits(roundf(data * (CANT_SHIFT)))
 Fixed::Fixed(const Fixed &oldObj)
 {
     std::cout << "Copy constructor called" << std::endl;
-    Fixed::setRawBits(oldObj.getRawBits());
+    setRawBits(oldObj.getRawBits());
 }
 
 Fixed::Fixed()
@@ -51,13 +52,13 @@ int Fixed::toInt() const
 
 Fixed::~Fixed()
 {
-    // std::cout << "Destructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &Fixed::operator= (const Fixed &oldObj)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    Fixed::setRawBits(oldObj.getRawBits());
+    setRawBits(oldObj.getRawBits());
     return (*this);
 }
 
@@ -99,13 +100,13 @@ bool Fixed::operator == (const Fixed &oldObj) const
 Fixed Fixed::operator -(const Fixed &oldObj)
 {
     Fixed returnedPoint;
-    returnedPoint.setRawBits(this->getRawBits() - oldObj.getRawBits());
+    returnedPoint.setRawBits(getRawBits() - oldObj.getRawBits());
     return (returnedPoint);
 }
 
 Fixed Fixed::operator +(const Fixed &oldObj)
 {
-     Fixed returnedPoint;
+    Fixed returnedPoint;
     returnedPoint.setRawBits(getRawBits() + oldObj.getRawBits());
     return (returnedPoint);
 }
@@ -137,7 +138,7 @@ Fixed   Fixed::operator ++(int)
     setRawBits(getRawBits() + (EPSILON * CANT_SHIFT));
     return (temp);
 }
-
+  
 Fixed   &Fixed::operator --()
 {
     setRawBits(getRawBits() - (EPSILON * CANT_SHIFT));
@@ -179,4 +180,3 @@ const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
         return (a);
     return (b);
 }
-

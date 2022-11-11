@@ -6,29 +6,11 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:49:29 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/05 18:36:55 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/10 12:56:29 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-class test{
-    private:
-        int value;
-    public:
-        test(){
-            std::cout << "constructor calleed" << std::endl;
-        }
-        int getValue(){return value;};
-        void setValue(int v){value = v;}
-        void    print(){
-            std::cout <<  getValue() << std::endl;
-        }
-};
-std::ostream &operator<<(std::ostream &ost,  test &t){
-    ost << t.getValue();
-    return (ost);
-}
 
 int main( void ) {
     Fixed a;

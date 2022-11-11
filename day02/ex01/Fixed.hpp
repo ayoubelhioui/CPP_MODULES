@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:49:22 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/03 15:26:37 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/10 12:56:33 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <cmath>
 #define CANT_SHIFT 256
+#define ZERO 0
 
 class Fixed{
     private:
@@ -32,5 +33,6 @@ class Fixed{
         int toInt( void ) const;
         void setRawBits(int const raw);
 };
+
 std::ostream& operator<< (std::ostream &ost, const Fixed &fixed);
 #endif
