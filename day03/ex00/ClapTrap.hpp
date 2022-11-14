@@ -6,16 +6,16 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:11:00 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/12 11:28:15 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:09:56 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_H
 #define CLAPTRAP_H
 #include <iostream>
-#define HITPOINTS 10
-#define ENERGYPOINTS 10
-#define ATTACKDAMAGE 0
+#define CLAP_HITPOINTS 10
+#define CLAP_ENERGYPOINTS 10
+#define CLAP_ATTACKDAMAGE 0
 
 class ClapTrap{
 	private:
@@ -41,5 +41,8 @@ class ClapTrap{
 		void takeDamage(unsigned int amount);
 		void beRapaired(unsigned int amount);
 		void checkEnergyPoint();
+		void printing(){
+			std::cout << "hey" << std::endl;
+		}
 };
 #endif

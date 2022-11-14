@@ -1,20 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/14 07:46:04 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/11/14 09:21:17 by ael-hiou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : hitPoints(HITPOINTS),  energyPoints(ENERGYPOINTS), attackDamage(ATTACKDAMAGE){
-	std::cout << "Constructor Called" << std::endl;
+ClapTrap::ClapTrap() : hitPoints(CLAP_HITPOINTS), energyPoints(CLAP_ENERGYPOINTS), attackDamage(CLAP_ATTACKDAMAGE){
+	std::cout << "ClapTrap Constructor Called" << std::endl;
 }
 
+ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(CLAP_HITPOINTS), energyPoints(CLAP_ENERGYPOINTS), attackDamage(CLAP_ATTACKDAMAGE){
+	std::cout << "ClapTrap Paramiterized Constructor Called" << std::endl;
+};
+
 ClapTrap::ClapTrap(const ClapTrap &oldObj){
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cout << "ClapTrap Copy Constructor Called" << std::endl;
 	*this = oldObj;
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor Called" << std::endl;
+	std::cout << "ClapTrap Destructor Called" << std::endl;
 }
-ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(HITPOINTS),  energyPoints(ENERGYPOINTS), attackDamage(ATTACKDAMAGE){
-	std::cout << "Paramiterized Constructor Called" << std::endl;
-};
 
 void ClapTrap::setAttackDamage(int value){
 	this->attackDamage = value;

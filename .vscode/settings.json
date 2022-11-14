@@ -65,6 +65,7 @@
 		"utility": "cpp",
 		"vector": "cpp",
 		"stdio.h": "c",
-		"filesystem": "cpp"
+		"filesystem": "cpp",
+		"__cxx_version": "cpp"
 	}
 }

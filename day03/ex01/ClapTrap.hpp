@@ -9,7 +9,7 @@
 /*   Updated: 2022/11/12 11:28:15 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+	
 #ifndef CLAPTRAP_H
 #define CLAPTRAP_H
 #include <iostream>
@@ -18,7 +18,7 @@
 #define ATTACKDAMAGE 0
 
 class ClapTrap{
-	private:
+	protected:
 		std::string Name;
 		int hitPoints;
 		int energyPoints;
