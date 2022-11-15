@@ -6,26 +6,12 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 08:22:24 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/13 13:42:02 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:54:00 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-class test : public ClapTrap{
-	private :
-
-	public :
-	  test(){
-		std::cout << "constructor called" << std::endl;
-	  }; 
-	void printing(){
-		std::cout << ".. " << std::endl;
-	}
-	//   test(const test &oldObj);
-	//   test &operator =(const test &oldObj);
-	//    ~test();
-};
 int main()
 {
 	// ClapTrap a("Ayoub");

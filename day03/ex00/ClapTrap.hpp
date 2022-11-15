@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:11:00 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/14 09:09:56 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:38:17 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,5 @@ class ClapTrap{
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRapaired(unsigned int amount);
-		void checkEnergyPoint();
-		void printing(){
-			std::cout << "hey" << std::endl;
-		}
 };
 #endif
