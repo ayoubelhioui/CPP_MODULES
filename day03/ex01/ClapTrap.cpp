@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/15 09:50:45 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/11/17 09:16:12 by ael-hiou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : hitPoints(HITPOINTS),  energyPoints(ENERGYPOINTS), attackDamage(ATTACKDAMAGE){
+ClapTrap::ClapTrap() : hitPoints(CLAP_HITPOINTS),  energyPoints(CLAP_ENERGYPOINTS), attackDamage(CLAP_ATTACKDAMAGE){
 	std::cout << "Construddctor Called" << std::endl;
 }
 
@@ -10,10 +22,11 @@ ClapTrap::ClapTrap(const ClapTrap &oldObj){
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor Called" << std::endl;
+	std::cout << "ClapTrap Destructor Called" << std::endl;
 }
-ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(HITPOINTS),  energyPoints(ENERGYPOINTS), attackDamage(ATTACKDAMAGE){
-	std::cout << "Paramiterized Constructor Called" << std::endl;
+
+ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(CLAP_HITPOINTS),  energyPoints(CLAP_ENERGYPOINTS), attackDamage(CLAP_ATTACKDAMAGE){
+	std::cout << "ClapTrap Paramiterized Constructor Called" << std::endl;
 };
 
 void ClapTrap::setAttackDamage(int value){
@@ -50,10 +63,10 @@ std::string ClapTrap::getName() const{
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &oldObj){
 	std::cout << "Copy Assignement Operator Called" << std::endl;
-	setAttackDamage(oldObj.getAttackDamage());
-	setHitPoints(oldObj.getHitPoints());
-	setEnergyPoints(oldObj.getEnergyPoints());
-	setName(oldObj.getName());
+	this->attackDamage = oldObj.attackDamage;
+	this->hitPoints = oldObj.hitPoints;
+	this->energyPoints = oldObj.energyPoints;
+	this->Name = oldObj.Name;
 	return (*this);
 }
 
@@ -76,9 +89,9 @@ void ClapTrap::beRapaired(unsigned int amount){
 void ClapTrap::attack(const std::string &target){
 	if (this->getEnergyPoints() > 0)
 	{
-		std::cout << "clapTrap " << this->Name << " attacks " << target << " ,causing " << this->getAttackDamage() << " points of damage" << std::endl;
+		std::cout << "ClapTrap " << this->Name << " attacks " << target << " ,causing " << this->getAttackDamage() << " points of damage" << std::endl;
 		this->setEnergyPoints(this->getEnergyPoints() - 1);
 	}
 	else
-		std::cout << this->Name << " soesn't have enough points to attack" << std::endl;
+		std::cout << this->Name << " doesn't have enough points to attack" << std::endl;
 }

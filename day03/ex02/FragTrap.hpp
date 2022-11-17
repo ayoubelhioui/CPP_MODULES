@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 08:22:24 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/17 11:22:18 by ael-hiou         ###   ########.fr       */
+/*   Created: 2022/11/15 09:44:11 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/11/15 11:17:00 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <map>
+#ifndef FRAGTRAP_H
+#define FRAGTRAP_H
+#define FRAG_HITPOINTS 100
+#define FRAG_ENERGYPOINTS 100
+#define FRAG_ATTACKDAMAGE 30
 #include "ClapTrap.hpp"
-int main()
-{
-	ClapTrap a("Ayoub");
-	ClapTrap b("issam");
-	a.attack("issam");
-	b.takeDamage(0);
-	b.attack("ayoub");
-	a.takeDamage(0);
-	a.beRapaired(0);
-	b.beRapaired(0);
-	{
-		ClapTrap c;
-		ClapTrap d(c);
-	}
- 	return 0;
-}
+
+class FragTrap : public ClapTrap{
+	public :
+		FragTrap();
+		FragTrap(std::string name);
+		~FragTrap();
+		void attack(const std::string &target);
+		void highFivesGuys() const;
+};
+#endif

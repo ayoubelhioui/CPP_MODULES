@@ -13,9 +13,9 @@
 #ifndef CLAPTRAP_H
 #define CLAPTRAP_H
 #include <iostream>
-#define CLAP_HITPOINTS 10
-#define CLAP_ENERGYPOINTS 10
-#define CLAP_ATTACKDAMAGE 0
+#define HITPOINTS 10
+#define ENERGYPOINTS 10
+#define ATTACKDAMAGE 0
 
 class ClapTrap{
 	protected:

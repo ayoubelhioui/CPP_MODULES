@@ -5,32 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 07:46:04 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/17 10:54:11 by ael-hiou         ###   ########.fr       */
+/*   Created: 2022/11/15 09:47:03 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/11/15 11:46:37 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : hitPoints(CLAP_HITPOINTS), energyPoints(CLAP_ENERGYPOINTS), attackDamage(CLAP_ATTACKDAMAGE){
-	std::cout << "ClapTrap Constructor Called" << std::endl;
-}
-
-ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(CLAP_HITPOINTS), energyPoints(CLAP_ENERGYPOINTS), attackDamage(CLAP_ATTACKDAMAGE){
-	std::cout << "ClapTrap Paramiterized Constructor Called" << std::endl;
-};
-
-ClapTrap &ClapTrap::operator=(const ClapTrap &oldObj){
-	std::cout << "ClapTrap Copy Assignement Operator Called" << std::endl;
-	this->Name = oldObj.Name;
-	this->attackDamage = oldObj.attackDamage;
-	this->hitPoints = oldObj.hitPoints;
-	this->energyPoints = oldObj.energyPoints;
-	return (*this);
+ClapTrap::ClapTrap() : hitPoints(HITPOINTS),  energyPoints(ENERGYPOINTS), attackDamage(ATTACKDAMAGE){
+	std::cout << "Construdctor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &oldObj){
-	std::cout << "ClapTrap Copy Constructor Called" << std::endl;
+	std::cout << "Copy Constructor Called" << std::endl;
 	*this = oldObj;
 }
 
@@ -38,6 +25,9 @@ ClapTrap::~ClapTrap(){
 	std::cout << "ClapTrap Destructor Called" << std::endl;
 }
 
+ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(HITPOINTS),  energyPoints(ENERGYPOINTS), attackDamage(ATTACKDAMAGE){
+	std::cout << "ClapTrap Paramiterized Constructor Called" << std::endl;
+};
 
 void ClapTrap::setAttackDamage(int value){
 	this->attackDamage = value;
@@ -71,6 +61,14 @@ std::string ClapTrap::getName() const{
 	return (this->Name);
 }
 
+ClapTrap &ClapTrap::operator=(const ClapTrap &oldObj){
+	std::cout << "Copy Assignement Operator Called" << std::endl;
+	this->Name = oldObj.Name;
+	this->attackDamage = oldObj.attackDamage;
+	this->hitPoints = oldObj.hitPoints;
+	this->energyPoints = oldObj.energyPoints;
+	return (*this);
+}
 
 void ClapTrap::takeDamage(unsigned int amount){
 	std::cout << this->Name << " took " << amount << " of damage" << std::endl;
@@ -78,11 +76,11 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRapaired(unsigned int amount){
+	std::cout << this->Name << " repaired himself" << std::endl;
 	if (this->energyPoints > 0)
 	{
-		std::cout << this->Name << " repaired himself" << std::endl;
 		this->hitPoints += amount;
-		this->energyPoints--;
+		this->energyPoints -= 1;
 	}
 	else
 		std::cout << this->Name << " doesn't have enough points to repair" << std::endl;
@@ -91,9 +89,10 @@ void ClapTrap::beRapaired(unsigned int amount){
 void ClapTrap::attack(const std::string &target){
 	if (this->energyPoints > 0)
 	{
-		std::cout << "ClapTrap " << this->Name << " attacks " << target << " ,causing " << this->attackDamage << " points of damage" << std::endl;
+		std::cout << "clapTrap " << this->Name << " attacks " << target << " ,causing " << this->attackDamage << " points of damage" << std::endl;
 		this->energyPoints--;
 	}
+		
 	else
 		std::cout << this->Name << " doesn't have enough points to attack" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:30:48 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/14 11:46:35 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/17 09:16:47 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,25 @@ ScavTrap::ScavTrap(){
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
 	hitPoints = SCAV_HITPOINT;
-	attackDamage = SCAV_ATTACKDAMAGE;
 	energyPoints = SCAV_ENERGYPOINTS;
+	attackDamage = SCAV_ATTACKDAMAGE;
 	std::cout << "ScavTrap Paramitrized Constructor Called" << std::endl;
 }
 
 ScavTrap:: ~ScavTrap(){
 	std::cout << "ScavTrap Destructor Called" << std::endl;
+}
+
+void ScavTrap::attack(const std::string &target){
+	if (this->energyPoints > 0)
+	{
+		std::cout << "ScavTrap " << this->Name << " attacks " << target << " ,causing " << this->attackDamage << " points of damage" << std::endl;
+		this->energyPoints--;
+	}
+	else
+		std::cout << this->Name << " doesn't have enough points to attack" << std::endl;
+}
+
+void ScavTrap::guardGate() const{
+	std::cout << this->Name << " is now in Gate keeper mode" << std::endl;
 }
