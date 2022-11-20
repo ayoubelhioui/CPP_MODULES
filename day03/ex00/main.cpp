@@ -6,25 +6,21 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 08:22:24 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/17 11:22:18 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/20 10:11:38 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <map>
 #include "ClapTrap.hpp"
+
 int main()
 {
-	ClapTrap a("Ayoub");
 	ClapTrap b("issam");
+	ClapTrap a("Ayoub");
 	a.attack("issam");
 	b.takeDamage(0);
 	b.attack("ayoub");
 	a.takeDamage(0);
-	a.beRapaired(0);
-	b.beRapaired(0);
-	{
-		ClapTrap c;
-		ClapTrap d(c);
-	}
+	a.beRepaired(0);
+	b.beRepaired(0);
  	return 0;
 }

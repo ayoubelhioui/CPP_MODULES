@@ -6,23 +6,37 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:30:48 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/17 09:16:47 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/20 10:06:43 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(){
-	hitPoints = SCAV_HITPOINT;
-	attackDamage = SCAV_ATTACKDAMAGE;
-	energyPoints = SCAV_ENERGYPOINTS;
+	this->hitPoints = SCAV_HITPOINT;
+	this->attackDamage = SCAV_ATTACKDAMAGE;
+	this->energyPoints = SCAV_ENERGYPOINTS;
 	std::cout << "ScavTrap Constructor Called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
-	hitPoints = SCAV_HITPOINT;
-	energyPoints = SCAV_ENERGYPOINTS;
-	attackDamage = SCAV_ATTACKDAMAGE;
+ScavTrap::ScavTrap(const ScavTrap &oldObj){
+	this->Name = oldObj.Name;
+	this->hitPoints = oldObj.hitPoints;
+	this->energyPoints = oldObj.energyPoints;
+	this->attackDamage = oldObj.attackDamage;
+	std::cout << "ScavTrap Copy Constructor Called" << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &oldObj){
+	this->Name = oldObj.Name;
+	this->hitPoints = oldObj.hitPoints;
+	this->energyPoints = oldObj.energyPoints;
+	this->attackDamage = oldObj.attackDamage;
+	std::cout << "ScavTrap Copy Assignement Called" << std::endl;
+	return (*this);
+}
+
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, SCAV_HITPOINT, SCAV_ENERGYPOINTS, SCAV_ATTACKDAMAGE){
 	std::cout << "ScavTrap Paramitrized Constructor Called" << std::endl;
 }
 

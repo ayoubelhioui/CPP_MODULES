@@ -6,19 +6,18 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:47:03 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/15 11:46:37 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/20 09:47:52 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : hitPoints(HITPOINTS),  energyPoints(ENERGYPOINTS), attackDamage(ATTACKDAMAGE){
-	std::cout << "Construdctor Called" << std::endl;
+	std::cout << "ClapTrap Constructor Called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &oldObj){
-	std::cout << "Copy Constructor Called" << std::endl;
-	*this = oldObj;
+ClapTrap::ClapTrap(const ClapTrap &oldObj) : hitPoints(oldObj.hitPoints), energyPoints(oldObj.energyPoints), attackDamage(oldObj.attackDamage){
+	std::cout << "ClapTrap Copy Constructor Called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
@@ -29,6 +28,10 @@ ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(HITPOINTS),  energy
 	std::cout << "ClapTrap Paramiterized Constructor Called" << std::endl;
 };
 
+ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage) : Name(name), hitPoints(hitPoints),  energyPoints(energyPoints), attackDamage(attackDamage){
+	std::cout << "ClapTrap Paramiterized Constructor Called" << std::endl;
+
+};
 void ClapTrap::setAttackDamage(int value){
 	this->attackDamage = value;
 }
@@ -75,7 +78,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 	this->hitPoints -= amount;
 }
 
-void ClapTrap::beRapaired(unsigned int amount){
+void ClapTrap::beRepaired(unsigned int amount){
 	std::cout << this->Name << " repaired himself" << std::endl;
 	if (this->energyPoints > 0)
 	{

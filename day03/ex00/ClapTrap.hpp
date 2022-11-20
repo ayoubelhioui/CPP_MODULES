@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:11:00 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/17 10:39:17 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/19 09:18:55 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #define CLAP_ENERGYPOINTS 10
 #define CLAP_ATTACKDAMAGE 0
 
-class 	ClapTrap{
+class ClapTrap{
 	private:
 		std::string Name;
 		int hitPoints;
@@ -29,7 +29,7 @@ class 	ClapTrap{
 		ClapTrap(const ClapTrap &oldObj);
 		ClapTrap &operator =(const ClapTrap &oldObj);
 		~ClapTrap();
-		int	getHitPoints() const;
+		int getHitPoints() const;
 		int	getEnergyPoints() const;
 		int	getAttackDamage() const;
 		std::string getName() const;
@@ -39,6 +39,6 @@ class 	ClapTrap{
 		void setAttackDamage(int value);
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
-		void beRapaired(unsigned int amount);
+		void beRepaired(unsigned int amount);
 };
 #endif

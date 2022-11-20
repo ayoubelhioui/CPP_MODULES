@@ -66,6 +66,9 @@
 		"vector": "cpp",
 		"stdio.h": "c",
 		"filesystem": "cpp",
-		"__cxx_version": "cpp"
+		"__cxx_version": "cpp",
+		"__tree": "cpp",
+		"map": "cpp",
+		"set": "cpp"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:19:48 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/17 09:16:42 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/20 09:57:53 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 #define SCAV_ENERGYPOINTS 50
 #define SCAV_ATTACKDAMAGE 20
 #include "ClapTrap.hpp"
+
 class ScavTrap : public ClapTrap{
 	public :
 		ScavTrap();
+		ScavTrap(const ScavTrap &oldObj);
+		ScavTrap &operator=(const ScavTrap &oldObj);
 		ScavTrap(std::string name);
 		~ScavTrap();
 		void guardGate() const;

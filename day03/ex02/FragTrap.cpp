@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:41:42 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/15 11:46:50 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/20 12:06:33 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,25 @@ FragTrap::FragTrap(){
 	std::cout << "FragTrap Constructor called " << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name) {
-	this->hitPoints = FRAG_HITPOINTS;
-	this->energyPoints = FRAG_ENERGYPOINTS;
-	this->attackDamage = FRAG_ATTACKDAMAGE;
+FragTrap::FragTrap(std::string name) : ClapTrap(name, FRAG_HITPOINTS, FRAG_ENERGYPOINTS, FRAG_ATTACKDAMAGE) {
 	std::cout << "FragTrap Paramitrized Constructor called" << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap &oldObj) {
+	this->Name = oldObj.Name;
+	this->hitPoints = oldObj.hitPoints;
+	this->energyPoints = oldObj.energyPoints;
+	this->attackDamage = oldObj.attackDamage;
+	std::cout << "FragTrap Copy Constructor called" << std::endl;
+}
+
+FragTrap &FragTrap::operator=(const FragTrap &oldObj){
+	std::cout << "FragTrap Copy Assignement Operator Called" << std::endl;
+	this->Name = oldObj.Name;
+	this->attackDamage = oldObj.attackDamage;
+	this->hitPoints = oldObj.hitPoints;
+	this->energyPoints = oldObj.energyPoints;
+	return (*this);
 }
 
 FragTrap::~FragTrap(){

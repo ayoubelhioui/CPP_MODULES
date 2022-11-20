@@ -6,26 +6,29 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:50:45 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/17 09:16:12 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/20 07:31:33 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : hitPoints(CLAP_HITPOINTS),  energyPoints(CLAP_ENERGYPOINTS), attackDamage(CLAP_ATTACKDAMAGE){
-	std::cout << "Construddctor Called" << std::endl;
+	std::cout << "ClapTrap Constructor Called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &oldObj){
-	std::cout << "Copy Constructor Called" << std::endl;
-	*this = oldObj;
+ClapTrap::ClapTrap(const ClapTrap &oldObj) : Name(oldObj.Name), hitPoints(oldObj.hitPoints), energyPoints(oldObj.energyPoints), attackDamage(oldObj.attackDamage){
+	std::cout << "ClapTrap Copy Constructor Called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string Name, int hitPoints,  int energyPoints, int attackDamag) : Name(Name), hitPoints(hitPoints), energyPoints(energyPoints), attackDamage(attackDamag){
+	std::cout << "ClapTrap Paramitrized Constructor Called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
 	std::cout << "ClapTrap Destructor Called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(CLAP_HITPOINTS),  energyPoints(CLAP_ENERGYPOINTS), attackDamage(CLAP_ATTACKDAMAGE){
+ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(CLAP_HITPOINTS), energyPoints(CLAP_ENERGYPOINTS), attackDamage(CLAP_ATTACKDAMAGE){
 	std::cout << "ClapTrap Paramiterized Constructor Called" << std::endl;
 };
 
@@ -75,7 +78,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 	this->setHitPoints(getHitPoints() - amount);
 }
 
-void ClapTrap::beRapaired(unsigned int amount){
+void ClapTrap::beRepaired(unsigned int amount){
 	std::cout << this->Name << " repaired himself" << std::endl;
 	if (this->getEnergyPoints() > 0)
 	{

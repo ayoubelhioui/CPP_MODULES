@@ -25,6 +25,7 @@ class ClapTrap{
 		int attackDamage;
 	public:
 		ClapTrap();
+		ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
 		ClapTrap(std::string Name);
 		ClapTrap(const ClapTrap &oldObj);
 		ClapTrap &operator =(const ClapTrap &oldObj);
@@ -39,6 +40,6 @@ class ClapTrap{
 		void setAttackDamage(int value);
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
-		void beRapaired(unsigned int amount);
+		void beRepaired(unsigned int amount);
 };
 #endif

@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:44:11 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/15 11:17:00 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/11/20 09:48:15 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class FragTrap : public ClapTrap{
 	public :
 		FragTrap();
 		FragTrap(std::string name);
+		FragTrap(const FragTrap &oldObj);
+		FragTrap &operator =(const FragTrap &oldObj);
 		~FragTrap();
 		void attack(const std::string &target);
 		void highFivesGuys() const;
