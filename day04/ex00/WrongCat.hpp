@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 08:14:16 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/12/03 14:48:17 by ael-hiou         ###   ########.fr       */
+/*   Created: 2022/11/27 08:18:03 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/12/03 14:22:00 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ANIMAL_HPP
-#define __ANIMAL_HPP
-#define EMPTY ""
-#include <iostream>
-
-class Animal{
-	protected :
-		std::string type;
+#ifndef __WRONG_CAT_HPP
+#define __WRONG_CAT_HPP
+#include "WrongAnimal.hpp"
+#define WrongCAT "WRONGCAT"
+class WrongCat : public WrongAnimal{
 	public :
-		Animal();
-		Animal(const Animal &oldObj);
-		Animal &operator =(const Animal &oldObj);
-		~Animal();
-	  	std::string getType() const;
-      	void setType(std::string enteredType);
-	  	virtual void makeSound() const;
+	  WrongCat();
+	  WrongCat(const WrongCat &oldObj);
+	  WrongCat &operator =(const WrongCat &oldObj);
+	  ~WrongCat();
+	  void makeSound() const;
 };
 #endif
