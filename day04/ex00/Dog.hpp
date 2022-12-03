@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 08:18:51 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/11/27 11:17:27 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/12/01 11:43:44 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,8 @@ class Dog : public Animal
 	  Dog &operator =(const Dog &oldObj);
 	  ~Dog();
 	  void makeSound() const;
+	  void s() {
+		std::cout << "hey" << std::endl;
+	  }
 };
 #endif
