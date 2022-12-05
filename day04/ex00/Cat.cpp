@@ -13,8 +13,8 @@
 #include "Cat.hpp"
 
 Cat::Cat(){
-	this->type = CAT;
-	std::cout << "Cat Defaule Constructor Called" << std::endl;
+	this->_type = CAT;
+	std::cout << "Cat Default Constructor Called" << std::endl;
 }
 
 Cat::Cat(const Cat &oldObj){
@@ -23,8 +23,8 @@ Cat::Cat(const Cat &oldObj){
 }
 
 Cat& Cat::operator =(const Cat &oldObj){
-	std::cout << "Cat Copy Assignement Operator Called" << std::endl;
-	this->type = oldObj.type;
+	std::cout << "Cat Copy Assignment Operator Called" << std::endl;
+	this->_type = oldObj._type;
 	return (*this);
 }
 

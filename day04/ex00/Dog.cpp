@@ -13,7 +13,7 @@
 #include "Dog.hpp"
 
 Dog::Dog(){
-	this->type = DOG;
+	this->_type = DOG;
 	std::cout << "Dog Default Constructor Called" << std::endl;
 }
 
@@ -24,7 +24,7 @@ Dog::Dog(const Dog &oldObj){
 
 Dog &Dog::operator=(const Dog &oldObj){
 	std::cout << "Dog Copy Assignement Operator Called" << std::endl;
-	this->type = oldObj.type;
+	this->_type = oldObj._type;
 	return (*this);
 }
 

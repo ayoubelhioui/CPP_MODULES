@@ -10,10 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __CAT_HPP
-#define __CAT_HPP
+#ifndef _CAT_HPP
+#define _CAT_HPP
 #include "Animal.hpp"
 #define CAT "CAT"
+
 class Cat : public Animal{
 	public :
 	  Cat();

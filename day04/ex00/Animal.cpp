@@ -12,7 +12,7 @@
 
 #include "Animal.hpp"
 
-Animal::Animal() : type(EMPTY){
+Animal::Animal() : _type(EMPTY){
 	std::cout << "Animal Default Constructor Called" << std::endl;
 }
 
@@ -22,17 +22,17 @@ Animal::Animal(const Animal &oldObj){
 }
 
 Animal &Animal::operator=(const Animal &oldObj){
-	std::cout << "Animal Copy Assignement Operator Called" << std::endl;
-	this->type = oldObj.type;
+	std::cout << "Animal Copy Assignment Operator Called" << std::endl;
+	this->_type = oldObj._type;
 	return (*this);
 }
 
 void Animal::setType(std::string enteredType){
-	this->type = enteredType;
+	this->_type = enteredType;
 }
 
 std::string Animal::getType() const{
-	return (this->type);
+	return (this->_type);
 }
 
 Animal::~Animal(){
