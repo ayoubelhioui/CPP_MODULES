@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 08:18:51 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/12/01 11:43:44 by ael-hiou         ###   ########.fr       */
+/*   Created: 2022/12/05 14:55:01 by ael-hiou          #+#    #+#             */
+/*   Updated: 2022/12/05 14:56:13 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __DOG_HPP
-#define __DOG_HPP
-#define DOG "DOG"
+#ifndef __CAT_HPP
+#define __CAT_HPP
 #include "Animal.hpp"
-class Dog : public Animal
-{
-public:
-    Dog();
-    Dog(const Dog &oldObj);
-    Dog &operator =(const Dog &oldObj);
-    ~Dog();
+#include "Brain.hpp"
+#define CAT "CAT"
+
+class Cat : public Animal{
+private:
+    Brain *brain;
+public :
+    Cat();
+    Cat(const Cat &oldObj);
+    Cat &operator =(const Cat &oldObj);
+    ~Cat();
     void makeSound() const;
 };
 #endif

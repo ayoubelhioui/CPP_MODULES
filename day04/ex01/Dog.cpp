@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 08:17:41 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/12/04 18:19:42 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/12/05 12:58:34 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 Dog::Dog(){
 	this->brain = new Brain();
-	this->type = DOG;
+	this->_type = DOG;
 	std::cout << "Dog Default Constructor Called" << std::endl;
 }
 
 Dog::Dog(const Dog &oldObj){
 	std::cout << "Dog Copy Constructor Called" << std::endl;
+	this->brain = new Brain();
 	*this = oldObj;
 }
 
 Dog &Dog::operator=(const Dog &oldObj){
-	Brain *newBrain = new Brain();
-	std::cout << "Dog Copy Assignement Operator Called" << std::endl;
-	this->type = oldObj.type;
-	this->brain = oldObj.brain;
+	std::cout << "Dog Copy Assignment Operator Called" << std::endl;
+	this->_type = oldObj._type;
+	*this->brain = *oldObj.brain;
 	return (*this);
 }
 

@@ -13,7 +13,7 @@
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat(){
-	this->type = WrongCAT;
+	this->_type = WrongCAT;
 	std::cout << "WrongCat Default Constructor Called" << std::endl;
 }
 
@@ -23,8 +23,8 @@ WrongCat::WrongCat(const WrongCat &oldObj){
 }
 
 WrongCat& WrongCat::operator =(const WrongCat &oldObj){
-	std::cout << "WrongCat Copy Assignement Operator Called" << std::endl;
-	this->type = oldObj.type;
+	std::cout << "WrongCat Copy Assignment Operator Called" << std::endl;
+	this->_type = oldObj._type;
 	return (*this);
 }
 

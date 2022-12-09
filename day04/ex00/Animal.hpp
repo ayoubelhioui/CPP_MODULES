@@ -16,15 +16,16 @@
 #include <iostream>
 
 class Animal{
-	protected :
-		std::string _type;
-	public :
-		Animal();
-		Animal(const Animal &oldObj);
-		Animal &operator =(const Animal &oldObj);
-		virtual ~Animal();
-	  	std::string getType() const;
-      	void setType(std::string enteredType);
-	  	virtual void makeSound() const;
+protected :
+	std::string _type;
+public :
+	Animal();
+	Animal(const Animal &oldObj);
+	Animal &operator =(const Animal &oldObj);
+	virtual ~Animal();
+	std::string getType() const;
+	void setType(std::string enteredType);
+	virtual void makeSound() const;
 };
+
 #endif

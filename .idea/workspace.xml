@@ -16,10 +16,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d45da46-867e-4f81-af6d-0f478250d8f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/ex02/Brain.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/ex02/Brain.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day00/ex02/Account.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day00/ex02/Account.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day03/ex00/ClapTrap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day03/ex00/ClapTrap.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/Animal.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/Animal.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/Cat.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/Cat.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/Dog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/Dog.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/Dog.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/Dog.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/Dog.o" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/Dog.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/WrongAnimal.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/WrongAnimal.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/WrongAnimal.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/WrongAnimal.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/WrongAnimal.o" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/WrongAnimal.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/WrongCat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/WrongCat.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/WrongCat.o" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/WrongCat.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/animal" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/animal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Animal.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex01/Animal.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Animal.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex01/Animal.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Animal.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Brain.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex01/Brain.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Brain.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex01/Brain.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Brain.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Cat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex01/Cat.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Cat.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex01/Cat.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Cat.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Dog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex01/Dog.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Dog.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex01/Dog.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/Dog.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/brain" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex01/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex01/main.o" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,21 +84,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Project.color": "461142",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;461142&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ael-hiou/Desktop/CPP_MODULES/day04/ex02&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day04/ex02" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/day02/ex01" />
@@ -94,6 +127,18 @@
       <updated>1667217882221</updated>
       <workItem from="1667217889396" duration="5290000" />
       <workItem from="1667224310572" duration="1228000" />
+      <workItem from="1670249449578" duration="8017000" />
+      <workItem from="1670265297203" duration="8000" />
+      <workItem from="1670268815427" duration="139000" />
+      <workItem from="1670313712617" duration="5777000" />
+      <workItem from="1670327022433" duration="1749000" />
+      <workItem from="1670398969293" duration="3334000" />
+      <workItem from="1670413063967" duration="1663000" />
+      <workItem from="1670418697227" duration="6004000" />
+      <workItem from="1670437918851" duration="6000" />
+      <workItem from="1670486656113" duration="8243000" />
+      <workItem from="1670503051251" duration="8136000" />
+      <workItem from="1670573975069" duration="3000" />
     </task>
     <servers />
   </component>

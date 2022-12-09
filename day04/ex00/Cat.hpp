@@ -16,11 +16,11 @@
 #define CAT "CAT"
 
 class Cat : public Animal{
-	public :
-	  Cat();
-	  Cat(const Cat &oldObj);
-	  Cat &operator =(const Cat &oldObj);
-	  ~Cat();
-	  void makeSound() const;
+public :
+    Cat();
+    Cat(const Cat &oldObj);
+    Cat &operator =(const Cat &oldObj);
+    ~Cat();
+    void makeSound() const;
 };
 #endif
