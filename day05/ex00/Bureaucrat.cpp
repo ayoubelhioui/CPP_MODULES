@@ -4,7 +4,8 @@ Bureaucrat::Bureaucrat() {
     std::cout << "Bureaucrat Constructor Called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string _name, int _grade) : _name(_name), _grade(_grade){
+Bureaucrat::Bureaucrat(std::string _name, int _grade) : _name(_name){
+    setGrade(_grade);
     std::cout << "Bureaucrat Parameterized Constructor Called" << std::endl;
 }
 
@@ -16,34 +17,44 @@ Bureaucrat::Bureaucrat(const Bureaucrat &oldObj) {
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &oldObj) {
     std::cout << "Bureaucrat Copy Assignment Operator Called" << std::endl;
     this->_grade = oldObj._grade;
+    return (*this);
 }
 
-const char *Bureaucrat::GradeTooHighExcept::what() {
+const char *Bureaucrat::GradeTooHighExcept::what() const _NOEXCEPT{
     return (HIGH_GRADE_MSG);
 }
 
-const char *Bureaucrat::GradeTooLowExcept::what() {
+const char *Bureaucrat::GradeTooLowExcept::what() const _NOEXCEPT{
     return (LOW_GRADE_MSG);
+}
+
+std::ostream &operator <<(std::ostream &out, Bureaucrat &obj){
+    out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
+    return (out);
 }
 
 Bureaucrat::~Bureaucrat() {
     std::cout << "Bureaucrat Destructor Called" << std::endl;
 }
 
+void Bureaucrat::decrementGrade() {
+    if (this->_grade == HIGHEST_VALUE)
+            throw this->tooLowObject;
+        this->_grade++;
+}
+
+void Bureaucrat::incrementGrade() {
+        if (this->_grade == LOWEST_VALUE)
+            throw this->tooHighObject;
+        this->_grade--;
+}
+
 void Bureaucrat::setGrade(int enteredGrade) {
-    try{
-        if (enteredGrade > 150)
-            throw GradeTooHighExcept;
-        if (enteredGrade < 1)
-                throw GradeTooLowExcept;
+        if (enteredGrade > HIGHEST_VALUE)
+            throw this->tooHighObject;
+        if (enteredGrade < LOWEST_VALUE)
+                throw this->tooLowObject;
         this->_grade = enteredGrade;
-    }
-    catch (GradeTooHighExcept e){
-        std::cout << e.what() << std::endl;
-    }
-    catch(GradeTooLowExcept e){
-        std::cout << e.what() << std::endl;
-    }
 }
 
 std::string Bureaucrat::getName() const{
