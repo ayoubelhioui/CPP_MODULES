@@ -3,12 +3,12 @@
 int main()
 {
     try{
-        Bureaucrat b("HelloWorld", 150);
-        Bureaucrat c("i don't know", 1);
-        b.decrementGrade();
+        Bureaucrat b("HelloWorld", 151);
+//        Bureaucrat c("i don't know", 1);
+//        b.decrementGrade();
     }
-    catch(std::exception &e){
-        std::cout << e.what() << std::endl;
+    catch(int){
+        std::cout << "here" << std::endl;
     }
 //    std::cout << c.getGrade() << std::endl;
 //    c.incrementGrade();
