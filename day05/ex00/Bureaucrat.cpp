@@ -50,11 +50,12 @@ void Bureaucrat::incrementGrade() {
 }
 
 void Bureaucrat::setGrade(int enteredGrade) {
-        if (enteredGrade > HIGHEST_VALUE)
-            throw this->tooHighObject;
-        if (enteredGrade < LOWEST_VALUE)
-                throw this->tooLowObject;
-        this->_grade = enteredGrade;
+    if (enteredGrade > HIGHEST_VALUE)
+        throw this->tooHighObject;
+    if (enteredGrade < LOWEST_VALUE) {
+        throw this->tooLowObject;
+    }
+    this->_grade = enteredGrade;
 }
 
 std::string Bureaucrat::getName() const{
@@ -63,4 +64,5 @@ std::string Bureaucrat::getName() const{
 
 int Bureaucrat::getGrade() const {
     return (this->_grade);
+
 }

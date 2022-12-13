@@ -31,8 +31,8 @@ public :
 private :
     const std::string _name;
     int _grade;
-    static GradeTooLowExcept tooLowObject;
-    static GradeTooHighExcept tooHighObject;
+    GradeTooLowExcept tooLowObject;
+    GradeTooHighExcept tooHighObject;
 };
 std::ostream &operator <<(std::ostream &out, Bureaucrat &obj);
 #endif
