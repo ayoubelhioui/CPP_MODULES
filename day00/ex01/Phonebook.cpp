@@ -97,7 +97,7 @@ int PhoneBook::isValidIndex(std::string &enteredIndex, const int &contactIndex)
 
     while (true)
     {
-        validIndex = atoi(enteredIndex.c_str());
+        validIndex = std::stoi(enteredIndex);
         if (enteredIndex.empty() || lookingForCharacters(enteredIndex) || !(validIndex >= 0 && validIndex <= 7) || validIndex >= contactIndex)
         {
             std::cout << "Please Enter A Valid Index : ";

@@ -1,0 +1,110 @@
+cmake_minimum_required(VERSION 3.24)
+project(CPP_MODULES)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(day00/ex01)
+include_directories(day00/ex02)
+include_directories(day01/ex00)
+include_directories(day01/ex01)
+include_directories(day01/ex03)
+include_directories(day01/ex05)
+include_directories(day01/ex06)
+include_directories(day03/ex00)
+include_directories(day03/ex01)
+include_directories(day03/ex02)
+include_directories(day04/ex00)
+include_directories(day04/ex01)
+include_directories(day04/ex02)
+include_directories(day05/ex00)
+include_directories(day05/ex01)
+include_directories(day05/ex02)
+
+add_executable(CPP_MODULES
+        day00/ex00/main.cpp
+        day00/ex00/megaphone.cpp
+        day00/ex01/Contact.cpp
+        day00/ex01/Contact.hpp
+        day00/ex01/main.cpp
+        day00/ex01/Phonebook.cpp
+        day00/ex01/Phonebook.hpp
+        day00/ex02/Account.cpp
+        day00/ex02/Account.hpp
+        day00/ex02/main.cpp
+        day01/ex00/main.cpp
+        day01/ex00/Zombie.cpp
+        day01/ex00/Zombie.hpp
+        day01/ex01/main.cpp
+        day01/ex01/Zombie.cpp
+        day01/ex01/Zombie.hpp
+        day01/ex01/zombieHorde.cpp
+        day01/ex02/main.cpp
+        day01/ex03/HumanA.cpp
+        day01/ex03/HumanA.hpp
+        day01/ex03/HumanB.cpp
+        day01/ex03/HumanB.hpp
+        day01/ex03/main.cpp
+        day01/ex03/Weapon.cpp
+        day01/ex03/Weapon.hpp
+        day01/ex04/main.cpp
+        day01/ex05/Harl.cpp
+        day01/ex05/Harl.hpp
+        day01/ex05/main.cpp
+        day01/ex06/Harl.cpp
+        day01/ex06/Harl.hpp
+        day01/ex06/main.cpp
+        day03/ex00/ClapTrap.cpp
+        day03/ex00/ClapTrap.hpp
+        day03/ex00/main.cpp
+        day03/ex01/ClapTrap.cpp
+        day03/ex01/ClapTrap.hpp
+        day03/ex01/main.cpp
+        day03/ex01/ScavTrap.cpp
+        day03/ex01/ScavTrap.hpp
+        day03/ex02/ClapTrap.cpp
+        day03/ex02/ClapTrap.hpp
+        day03/ex02/FragTrap.cpp
+        day03/ex02/FragTrap.hpp
+        day03/ex02/main.cpp
+        day04/ex00/Animal.cpp
+        day04/ex00/Animal.hpp
+        day04/ex00/Cat.cpp
+        day04/ex00/Cat.hpp
+        day04/ex00/Dog.cpp
+        day04/ex00/Dog.hpp
+        day04/ex00/main.cpp
+        day04/ex00/WrongAnimal.cpp
+        day04/ex00/WrongAnimal.hpp
+        day04/ex00/WrongCat.cpp
+        day04/ex00/WrongCat.hpp
+        day04/ex01/Animal.cpp
+        day04/ex01/Animal.hpp
+        day04/ex01/Brain.cpp
+        day04/ex01/Brain.hpp
+        day04/ex01/Cat.cpp
+        day04/ex01/Cat.hpp
+        day04/ex01/Dog.cpp
+        day04/ex01/Dog.hpp
+        day04/ex01/main.cpp
+        day04/ex02/Animal.cpp
+        day04/ex02/Animal.hpp
+        day04/ex02/Brain.cpp
+        day04/ex02/Brain.hpp
+        day04/ex02/Cat.cpp
+        day04/ex02/Cat.hpp
+        day04/ex02/Dog.cpp
+        day04/ex02/Dog.hpp
+        day04/ex02/main.cpp
+        day05/ex00/Bureaucrat.cpp
+        day05/ex00/Bureaucrat.hpp
+        day05/ex00/main.cpp
+        day05/ex01/Bureaucrat.cpp
+        day05/ex01/Bureaucrat.hpp
+        day05/ex01/Form.cpp
+        day05/ex01/Form.hpp
+        day05/ex01/main.cpp
+        day05/ex02/Bureaucrat.cpp
+        day05/ex02/Bureaucrat.hpp
+        day05/ex02/Form.cpp
+        day05/ex02/Form.hpp
+        day05/ex02/main.cpp day05/ex02/ShrubberyCreationForm.cpp day05/ex02/ShrubberyCreationForm.hpp day05/ex02/RobotomyRequestForm.cpp day05/ex02/RobotomyRequestForm.hpp day05/ex02/PresidentialPardonForm.hpp day05/ex02/PresidentialPardonForm.cpp)

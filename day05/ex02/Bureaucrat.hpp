@@ -30,6 +30,7 @@ public :
     std::string getName() const;
     int getGrade() const;
     void signForm(Form &form) const;
+    void executeForm(Form const &form);
 private :
     const std::string _name;
     int _grade;

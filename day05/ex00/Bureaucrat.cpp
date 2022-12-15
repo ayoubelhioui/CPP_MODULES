@@ -1,5 +1,9 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::GradeTooHighExcept::GradeTooHighExcept(const std::string &errorMessage) : std::runtime_error(errorMessage){};
+
+Bureaucrat::GradeTooLowExcept::GradeTooLowExcept(const std::string &errorMessage) : std::runtime_error(errorMessage){};
+
 Bureaucrat::Bureaucrat() {
     std::cout << "Bureaucrat Constructor Called" << std::endl;
 }
@@ -20,14 +24,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &oldObj) {
     return (*this);
 }
 
-const char *Bureaucrat::GradeTooHighExcept::what() const _NOEXCEPT{
-    return (HIGH_GRADE_MSG);
-}
-
-const char *Bureaucrat::GradeTooLowExcept::what() const _NOEXCEPT{
-    return (LOW_GRADE_MSG);
-}
-
 std::ostream &operator <<(std::ostream &out, Bureaucrat &obj){
     out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
     return (out);
@@ -38,22 +34,22 @@ Bureaucrat::~Bureaucrat() {
 }
 
 void Bureaucrat::decrementGrade() {
-    if (this->_grade == HIGHEST_VALUE)
-            throw this->tooLowObject;
-        this->_grade++;
+    if (this->_grade >= HIGHEST_VALUE)
+        throw GradeTooLowExcept(LOW_GRADE_MSG);
+    this->_grade++;
 }
 
 void Bureaucrat::incrementGrade() {
-        if (this->_grade == LOWEST_VALUE)
-            throw this->tooHighObject;
-        this->_grade--;
+    if (this->_grade <= LOWEST_VALUE)
+        throw GradeTooHighExcept(HIGH_GRADE_MSG);
+    this->_grade--;
 }
 
 void Bureaucrat::setGrade(int enteredGrade) {
     if (enteredGrade > HIGHEST_VALUE)
-        throw this->tooHighObject;
+        throw GradeTooHighExcept(HIGH_GRADE_MSG);
     if (enteredGrade < LOWEST_VALUE)
-        throw this->tooLowObject;
+        throw GradeTooLowExcept(LOW_GRADE_MSG);
     this->_grade = enteredGrade;
 }
 

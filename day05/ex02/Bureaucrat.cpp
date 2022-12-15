@@ -5,21 +5,21 @@ Bureaucrat::GradeTooHighExcept::GradeTooHighExcept(const std::string &errorMessa
 Bureaucrat::GradeTooLowExcept::GradeTooLowExcept(const std::string &errorMessage) : std::runtime_error(errorMessage){};
 
 Bureaucrat::Bureaucrat() {
-    std::cout << "Bureaucrat Constructor Called" << std::endl;
+//    std::cout << "Bureaucrat Constructor Called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string _name, int _grade) : _name(_name){
     setGrade(_grade);
-    std::cout << "Bureaucrat Parameterized Constructor Called" << std::endl;
+//    std::cout << "Bureaucrat Parameterized Constructor Called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &oldObj) {
-    std::cout << "Bureaucrat Copy Constructor Called" << std::endl;
+//    std::cout << "Bureaucrat Copy Constructor Called" << std::endl;
     *this = oldObj;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &oldObj) {
-    std::cout << "Bureaucrat Copy Assignment Operator Called" << std::endl;
+//    std::cout << "Bureaucrat Copy Assignment Operator Called" << std::endl;
     this->_grade = oldObj._grade;
     return (*this);
 }
@@ -30,7 +30,7 @@ std::ostream &operator <<(std::ostream &out, Bureaucrat &obj){
 }
 
 Bureaucrat::~Bureaucrat() {
-    std::cout << "Bureaucrat Destructor Called" << std::endl;
+//    std::cout << "Bureaucrat Destructor Called" << std::endl;
 }
 
 void Bureaucrat::decrementGrade() {
@@ -50,6 +50,15 @@ void Bureaucrat::signForm(Form &form) const {
     }
 }
 
+void Bureaucrat::executeForm(const Form &form) {
+    try{
+        form.execute(*this);
+        std::cout << this->_name << " executed "  << form.getFormName() << std::endl;
+    }
+    catch(std::runtime_error &e){
+        std::cout << e.what() << std::endl;
+    }
+}
 void Bureaucrat::incrementGrade() {
     if (this->_grade <= LOWEST_VALUE)
         throw GradeTooHighExcept(HIGH_GRADE_MSG);

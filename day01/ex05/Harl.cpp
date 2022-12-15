@@ -20,11 +20,11 @@ void    Harl::complain(std::string level){
     std::string s[4] = {"debug", "error", "warning", "info"};
     memFn ptMem = {&Harl::debug, &Harl::error, &Harl::warning, &Harl::info};
     int index = ((level == s[0]) * 0) + ((level == s[1]) * 1) + ((level == s[2]) * 2) + ((level == s[3]) * 3);
-    if(index == 0 && level != s[0])
+    if  (index == 0 && level != s[0])
     {
         std::cout << "enter valid word" << std::endl;
         return ;
     }
-    (this->*ptMem[index])();
+    (this->*ptMem[index])(54);
 }
 

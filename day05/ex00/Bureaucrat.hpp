@@ -7,16 +7,15 @@
 #include <iostream>
 #include <exception>
 
-
 class Bureaucrat{
 public :
-    class GradeTooHighExcept : public std::exception{
+    class GradeTooHighExcept : public std::runtime_error{
     public :
-        const char *what() const _NOEXCEPT;
+        GradeTooHighExcept(const std::string &errorMessage);
     };
-    class GradeTooLowExcept : public std::exception{
-    public :
-        const char *what() const _NOEXCEPT;
+    class GradeTooLowExcept : public std::runtime_error{
+    public:
+        GradeTooLowExcept(const std::string &errorMessage);
     };
     Bureaucrat();
     Bureaucrat(std::string _name, int _grade);
@@ -31,8 +30,7 @@ public :
 private :
     const std::string _name;
     int _grade;
-    GradeTooLowExcept tooLowObject;
-    GradeTooHighExcept tooHighObject;
 };
+
 std::ostream &operator <<(std::ostream &out, Bureaucrat &obj);
 #endif
