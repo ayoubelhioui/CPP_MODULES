@@ -10,13 +10,7 @@ Form::NotSignedYetException::NotSignedYetException(const std::string &errorMessa
 
 Form::Form() : _isSigned(false), _gradeToSign(150), _formName("default"), _gradeToExecute(150){}
 
-//Form::Form(std::string _formName, bool _isSigned, int _gradeToSign, int _gradeToExecute) : _formName(_formName), _isSigned(_isSigned), _gradeToSign(_gradeToSign), _gradeToExecute(_gradeToExecute){
-//    setGradeToSign(_gradeToSign);
-//}
-
-//Form::Form(const Form &oldObj) : _isSigned(false), _gradeToSign(oldObj._gradeToSign), _formName(oldObj._formName), _gradeToExecute(oldObj._gradeToExecute){}
-
-Form::Form(std::string _enteredTarget) : _isSigned(false), _gradeToSign(150), _formName("default"), _gradeToExecute(150), _target(_enteredTarget) { }
+Form::Form(bool _isSigned, int _gradeToSign, std::string _formName, int _gradeToExecute, std::string _enteredTarget) : _isSigned(_isSigned), _gradeToSign(_gradeToSign), _formName(_formName), _gradeToExecute(_gradeToExecute), _target(_enteredTarget) {}
 
 Form &Form::operator=(const Form &oldObj) {
     this->_isSigned = oldObj._isSigned;
@@ -50,7 +44,6 @@ int Form::getGradeToSign() const{ return (this->_gradeToSign); }
 bool Form::getIsSigned() const { return (this->_isSigned); };
 
 std::string Form::getFormName() const { return (this->_formName); }
-
 
 std::ostream &operator << (std::ostream &out, const Form &form){
     out << form.getFormName() << " is " << (!form.getIsSigned() ? "not " : "") << "signed.";

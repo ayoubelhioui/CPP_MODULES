@@ -30,8 +30,7 @@ public :
             NotSignedYetException(const std::string &errorMessage);
 };
 	Form();
-    Form(std::string target);
-    Form(std::string _formName, bool _isSigned, int _gradeToSign, int _gradeToExecute);
+    Form(bool _isSigned, int _gradeToSign, std::string _formName, int _gradeToExecute, std::string _enteredTarget);
 	Form(const Form &oldObj);
 	Form &operator =(const Form &oldObj);
 	~Form();
@@ -44,7 +43,7 @@ public :
     void beSigned(const Bureaucrat &bureaucrat);
     virtual void execute(const Bureaucrat &bureaucrat) const = 0;
 private :
-    void gradeChecking(int enteredValue);
+    static void gradeChecking(int enteredValue);
     bool _isSigned;
     const int _gradeToSign;
     const std::string _formName;

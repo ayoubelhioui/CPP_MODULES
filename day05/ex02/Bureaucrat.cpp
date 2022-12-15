@@ -59,6 +59,7 @@ void Bureaucrat::executeForm(const Form &form) {
         std::cout << e.what() << std::endl;
     }
 }
+
 void Bureaucrat::incrementGrade() {
     if (this->_grade <= LOWEST_VALUE)
         throw GradeTooHighExcept(HIGH_GRADE_MSG);

@@ -1,30 +1,19 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(){
-//    std::cout << "ShrubberyCreationForm Default Constructor Called" << std::endl;
-};
+ShrubberyCreationForm::ShrubberyCreationForm(){ };
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form(target){
-    setGradeToSign(GRADE_TO_SIGN);
-    setGradeToExecute(GRADE_TO_EXECUTE);
-//    std::cout << "ShrubberyCreationForm Parametrized Constructor Called" << std::endl;
-};
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form(false, GRADE_TO_SIGN, "Shrubbery", GRADE_TO_EXECUTE, _target) {};
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &oldObj) {
-//    std::cout << "ShrubberyCreationForm Default Constructor Called" << std::endl;
     *this = oldObj;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator =(const ShrubberyCreationForm &oldObj){
-//    std::cout << "ShrubberyCreationForm Default Constructor Called" << std::endl;
-    setGradeToExecute(oldObj.getGradeToExecute());
-    setGradeToSign(oldObj.getGradeToSign());
+    this->_target = oldObj._target;
     return (*this);
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm(){
-//    std::cout << "ShrubberyCreationForm Destructor Called" << std::endl;
-}
+ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const{
     Form::execute(bureaucrat);
