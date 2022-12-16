@@ -1,26 +1,20 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm( std::string target) : Form(target){
-        this->setGradeToSign(GRADE_TO_SIGN);
-        this->setGradeToExecute(GRADE_TO_EXECUTE);
-        std::cout << "RobotomyRequestForm Parametrized Constructor Called" << std::endl;
-};
+RobotomyRequestForm::RobotomyRequestForm() {};
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &oldObj) {
-    std::cout << "RobotomyRequestForm Default Constructor Called" << std::endl;
-    *this = oldObj;
-}
+RobotomyRequestForm::RobotomyRequestForm( std::string _enteredtTarget) : Form(ROBOTOMY_GRADE_TO_SIGN, "Robotomy", ROBOTOMY_GRADE_TO_EXECUTE, _enteredtTarget) { };
 
-RobotomyRequestForm &RobotomyRequestForm ::operator =(const RobotomyRequestForm &oldObj){
-    std::cout << "RobotomyRequestForm Default Constructor Called" << std::endl;
-    setGradeToExecute(oldObj.getGradeToExecute());
-    setGradeToSign(oldObj.getGradeToSign());
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &oldObj) { *this = oldObj; }
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &oldObj){
+    this->_target = oldObj._target;
     return (*this);
 }
 
-//void Form::execute(const Bureaucrat &bureaucrat){
-//    if (!this->_isSigned || this->_gradeToExecute > bureaucrat.getGrade())
-//        throw CouldntExecuteExcept(COULDNT_EXECUTE_FORM);
+void RobotomyRequestForm::execute(const Bureaucrat &bureaucrat) const{
+    Form::execute(bureaucrat);
+    srand(time(0));
+    std::cout << "Robotimzed " << ((rand() % 2) ? "success" : "failed") << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {

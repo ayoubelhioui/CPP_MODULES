@@ -3,7 +3,7 @@
 #define HIGH_GRADE_MSG "TOO HIGH GRADE"
 #define LOW_GRADE_MSG "TOO LOW GRADE"
 #define COULDNT_EXECUTE_FORM "COULDN'T EXECUTE FORM"
-#define NOT_SIGNED_YET "FORM NOT SIGNED YET !"
+#define NOT_SIGNED_YET "FORM NOT SIGNED YET!"
 #define HIGHEST_VALUE 150
 #define LOWEST_VALUE 1
 #include <exception>
@@ -30,20 +30,17 @@ public :
             NotSignedYetException(const std::string &errorMessage);
 };
 	Form();
-    Form(bool _isSigned, int _gradeToSign, std::string _formName, int _gradeToExecute, std::string _enteredTarget);
-	Form(const Form &oldObj);
-	Form &operator =(const Form &oldObj);
-	~Form();
+    Form(int _gradeToSign, std::string _formName, int _gradeToExecute, std::string _enteredTarget);
+    Form(const Form &oldObj);
+    Form &operator =(const Form &oldObj);
+    virtual ~Form();
     int getGradeToExecute() const;
     bool getIsSigned() const;
     int getGradeToSign() const;
     std::string getFormName() const;
-    void setGradeToExecute(int enteredGradeToExecute);
-    void setGradeToSign(int enteredGradeToSign);
     void beSigned(const Bureaucrat &bureaucrat);
     virtual void execute(const Bureaucrat &bureaucrat) const = 0;
 private :
-    static void gradeChecking(int enteredValue);
     bool _isSigned;
     const int _gradeToSign;
     const std::string _formName;

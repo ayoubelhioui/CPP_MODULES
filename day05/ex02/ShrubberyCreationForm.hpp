@@ -2,14 +2,14 @@
 #define _SHRUBBERY_HPP_
 
 
-#define GRADE_TO_SIGN 145
-#define GRADE_TO_EXECUTE 137
+#define SHRUBBERY_GRADE_TO_SIGN 145
+#define SHRUBBERY_GRADE_TO_EXECUTE 137
 #include "Form.hpp"
 #include <fstream>
 
 class ShrubberyCreationForm : public Form{
 private:
-    void writingASCIITree() const;
+    static void writingASCIITree(const std::string &_enteredTarget);
 public :
     ShrubberyCreationForm();
     ShrubberyCreationForm(std::string target);
