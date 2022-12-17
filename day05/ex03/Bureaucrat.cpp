@@ -4,20 +4,22 @@ Bureaucrat::GradeTooHighExcept::GradeTooHighExcept(const std::string &errorMessa
 
 Bureaucrat::GradeTooLowExcept::GradeTooLowExcept(const std::string &errorMessage) : std::runtime_error(errorMessage){};
 
-Bureaucrat::Bureaucrat() { std::cout << "Bureaucrat Constructor Called" << std::endl; }
+Bureaucrat::Bureaucrat() {
+//    std::cout << "Bureaucrat Constructor Called" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(std::string _name, int _grade) : _name(_name){
     setGrade(_grade);
-    std::cout << "Bureaucrat Parameterized Constructor Called" << std::endl;
+//    std::cout << "Bureaucrat Parameterized Constructor Called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &oldObj) {
-    std::cout << "Bureaucrat Copy Constructor Called" << std::endl;
+//    std::cout << "Bureaucrat Copy Constructor Called" << std::endl;
     *this = oldObj;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &oldObj) {
-    std::cout << "Bureaucrat Copy Assignment Operator Called" << std::endl;
+//    std::cout << "Bureaucrat Copy Assignment Operator Called" << std::endl;
     this->_grade = oldObj._grade;
     return (*this);
 }
@@ -27,7 +29,15 @@ std::ostream &operator <<(std::ostream &out, Bureaucrat &obj){
     return (out);
 }
 
-Bureaucrat::~Bureaucrat() { std::cout << "Bureaucrat Destructor Called" << std::endl; }
+Bureaucrat::~Bureaucrat() {
+//    std::cout << "Bureaucrat Destructor Called" << std::endl;
+}
+
+void Bureaucrat::decrementGrade() {
+    if (this->_grade >= HIGHEST_VALUE)
+        throw GradeTooLowExcept(LOW_GRADE_MSG);
+    this->_grade++;
+}
 
 void Bureaucrat::signForm(Form &form) const {
     try{
@@ -40,9 +50,21 @@ void Bureaucrat::signForm(Form &form) const {
     }
 }
 
-void Bureaucrat::incrementGrade() { (this->_grade == LOWEST_VALUE ? throw GradeTooHighExcept(HIGH_GRADE_MSG) : this->_grade--); }
+void Bureaucrat::executeForm(const Form &form) {
+    try{
+        form.execute(*this);
+        std::cout << this->_name << " executed "  << form.getFormName() << std::endl;
+    }
+    catch(std::runtime_error &e){
+        std::cout << e.what() << std::endl;
+    }
+}
 
-void Bureaucrat::decrementGrade() { (this->_grade == HIGHEST_VALUE ? throw GradeTooLowExcept(LOW_GRADE_MSG) : this->_grade++); }
+void Bureaucrat::incrementGrade() {
+    if (this->_grade <= LOWEST_VALUE)
+        throw GradeTooHighExcept(HIGH_GRADE_MSG);
+    this->_grade--;
+}
 
 void Bureaucrat::setGrade(int enteredGrade) {
     if (enteredGrade > HIGHEST_VALUE)
@@ -52,6 +74,10 @@ void Bureaucrat::setGrade(int enteredGrade) {
     this->_grade = enteredGrade;
 }
 
-std::string Bureaucrat::getName() const{ return (this->_name); }
+std::string Bureaucrat::getName() const{
+    return (this->_name);
+}
 
-int Bureaucrat::getGrade() const { return (this->_grade); }
+int Bureaucrat::getGrade() const {
+    return (this->_grade);
+}
