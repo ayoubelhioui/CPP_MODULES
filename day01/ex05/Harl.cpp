@@ -25,6 +25,6 @@ void    Harl::complain(std::string level){
         std::cout << "enter valid word" << std::endl;
         return ;
     }
-    (this->*ptMem[index])(54);
+    (this->*ptMem[index])();
 }
 

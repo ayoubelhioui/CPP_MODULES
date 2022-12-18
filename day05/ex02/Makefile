@@ -1,5 +1,5 @@
 SRC := Bureaucrat.cpp main.cpp Form.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
-NAME := bureaucrat
+NAME := forms
 STANDARD := -std=c++98
 CXXFLAGS := -Wall -Wextra -Werror
 OBJECT_FILES := $(SRC:.cpp=.o)

@@ -8,6 +8,9 @@
 #include <exception>
 
 class Bureaucrat{
+private :
+    const std::string _name;
+    int _grade;
 public :
     class GradeTooHighExcept : public std::runtime_error{
     public :
@@ -27,9 +30,6 @@ public :
     void setGrade(int enteredGrade);
     std::string getName() const;
     int getGrade() const;
-private :
-    const std::string _name;
-    int _grade;
 };
 
 std::ostream &operator <<(std::ostream &out, Bureaucrat &obj);

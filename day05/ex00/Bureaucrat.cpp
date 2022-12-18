@@ -25,7 +25,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &oldObj) {
 }
 
 std::ostream &operator <<(std::ostream &out, Bureaucrat &obj){
-    out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
+    out << obj.getName() << ", bureaucrat grade is : " << obj.getGrade() << ".";
     return (out);
 }
 
@@ -33,17 +33,10 @@ Bureaucrat::~Bureaucrat() {
     std::cout << "Bureaucrat Destructor Called" << std::endl;
 }
 
-void Bureaucrat::decrementGrade() {
-    if (this->_grade >= HIGHEST_VALUE)
-        throw GradeTooLowExcept(LOW_GRADE_MSG);
-    this->_grade++;
-}
+void Bureaucrat::incrementGrade() { (this->_grade == LOWEST_VALUE ? throw GradeTooHighExcept(HIGH_GRADE_MSG) : this->_grade--); }
 
-void Bureaucrat::incrementGrade() {
-    if (this->_grade <= LOWEST_VALUE)
-        throw GradeTooHighExcept(HIGH_GRADE_MSG);
-    this->_grade--;
-}
+void Bureaucrat::decrementGrade() { (this->_grade == HIGHEST_VALUE ? throw GradeTooLowExcept(LOW_GRADE_MSG) : this->_grade++); }
+
 
 void Bureaucrat::setGrade(int enteredGrade) {
     if (enteredGrade > HIGHEST_VALUE)

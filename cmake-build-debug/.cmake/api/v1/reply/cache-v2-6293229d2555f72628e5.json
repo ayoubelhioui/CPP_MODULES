@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/ael-hiou/Desktop/push/cmake-build-debug"
+			"value" : "/Users/ael-hiou/Desktop/CPP-MODULES/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/ael-hiou/Desktop/push/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/ael-hiou/Desktop/CPP-MODULES/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -539,7 +539,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/ael-hiou/Desktop/push"
+			"value" : "/Users/ael-hiou/Desktop/CPP-MODULES"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -1111,7 +1111,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/ael-hiou/Desktop/push/cmake-build-debug"
+			"value" : "/Users/ael-hiou/Desktop/CPP-MODULES/cmake-build-debug"
 		},
 		{
 			"name" : "CPP_MODULES_IS_TOP_LEVEL",
@@ -1135,7 +1135,43 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/ael-hiou/Desktop/push"
+			"value" : "/Users/ael-hiou/Desktop/CPP-MODULES"
+		},
+		{
+			"name" : "Project_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/ael-hiou/Desktop/CPP-MODULES/cmake-build-debug"
+		},
+		{
+			"name" : "Project_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "Project_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/ael-hiou/Desktop/CPP-MODULES"
 		}
 	],
 	"kind" : "cache",
