@@ -1,4 +1,4 @@
-SRC :=  main.cpp
+SRC :=  main.cpp a.cpp
 NAME := templates
 STANDARD := -std=c++98
 CXXFLAGS := -Wall -Wextra -Werror
