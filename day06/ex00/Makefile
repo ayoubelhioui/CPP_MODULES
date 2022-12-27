@@ -1,5 +1,5 @@
-SRC :=  main.cpp Casting.cpp
-NAME := serialization
+SRC :=  skipThis.cpp
+NAME := bureaucrat
 STANDARD := -std=c++98
 CXXFLAGS := -Wall -Wextra -Werror
 OBJECT_FILES := $(SRC:.cpp=.o)

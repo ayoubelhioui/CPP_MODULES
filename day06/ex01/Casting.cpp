@@ -1,6 +1,6 @@
 #include "EX01.hpp"
 
-Data::Data() : a(10), b(4.5), c('a'){}
+Data::Data() : a(10), b(13.37), c('a'){}
 
 uintptr_t serialize(Data* ptr){
     return (reinterpret_cast<uintptr_t>(ptr));

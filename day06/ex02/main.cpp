@@ -1,44 +1,30 @@
-//#include "Base.hpp"
-//#include "unistd.h"
-//#include "ClassB.hpp"
-//#include "ClassC.hpp"
-//#include "ClassA.hpp"
-//int main()
-//{
-//    Base *d = generate();
-//    if (dynamic_cast<ClassB*>(d))
-//        std::cout << "here 1" << std::endl;
-//    *d = static_cast<ClassB*>(d);
-////    ClassB *b = static_cast<ClassB*>(d);
-////    identify(generate());
-////    sleep(1);
-////    identify(*generate());
-//    return 0;
-//}
+#include "Base.hpp"
+#include "unistd.h"
+#include "ClassB.hpp"
+#include "ClassC.hpp"
+#include "ClassA.hpp"
 
-#include <iostream>
-using namespace std;
-
-class b {
-public:
-    virtual void p(){
-        std::cout << "heere" << std::endl;
-    }
+class base{
+protected :
     int a;
+    int b;
+public :
+	base() : a(10), b(-10){
+    std::cout << "BASE" << std::endl;
 };
-class Derived : public b{
-public:
-    Derived(){
-        a = -10;
-    }
+    base(int a1, int b1) : a(a1), b(b1){};
+};
+
+class derived : public base{
+private :
+    int c;
+public :
+	derived()  : base(5,9), c(10){
+    std::cout << "DERIVED" << std::endl;
+};
 };
 int main()
 {
-    b *d1 = new b();
-    d1->a = -100;
-//    b* b1 = (b*)(&d1); // allowed
-    Derived* b2 = static_cast<Derived*>(d1);
-    std::cout << b2->a << std::endl;
-    b2->a = 6;
-    return 0;
+    derived d;
 }
+

@@ -6,7 +6,7 @@
 /*   By: ael-hiou <ael-hiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 08:14:16 by ael-hiou          #+#    #+#             */
-/*   Updated: 2022/12/03 14:48:17 by ael-hiou         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:39:03 by ael-hiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ protected :
 	std::string _type;
 public :
 	Animal();
-	Animal(const Animal &oldObj);
+	Animal(const Animal &oldObj); 
 	Animal &operator =(const Animal &oldObj);
 	virtual ~Animal();
 	std::string getType() const;

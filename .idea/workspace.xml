@@ -10,7 +10,9 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated />
+    <generated>
+      <config projectName="CPP_MODULES" targetName="CPP_MODULES" />
+    </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
@@ -19,39 +21,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d45da46-867e-4f81-af6d-0f478250d8f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/day06/ex01/Serialization.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/day08/ex02/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day08/ex02/MutantStack.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day08/ex02/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-9d74940d07b337e87d48.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-de5e8db8335cede9c353.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-d1c0cadece8dbbf2b2da.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-12-15T17-05-24-0290.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CPP_MODULES-Debug-81f0255df3f763a0e91a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-7679df25af4db97b5100.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-12-18T08-10-15-0905.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CPP_MODULES-Debug-bed42e426a3cb4be6e09.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day01/ex05/Harl.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day01/ex05/Harl.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex00/Bureaucrat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day05/ex00/Bureaucrat.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex00/Bureaucrat.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day05/ex00/Bureaucrat.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex00/Bureaucrat.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex00/bureaucrat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex00/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day05/ex00/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex00/main.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex01/Bureaucrat.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex01/Form.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex01/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/day05/ex01/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex01/bureaucrat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex01/main.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex02/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/day05/ex02/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex03/Intern.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day05/ex03/Intern.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex03/Intern.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day05/ex03/Intern.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day05/ex03/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/day05/ex03/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day03/ex02/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day03/ex02/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day04/ex00/Animal.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day04/ex00/Animal.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day05/ex03/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day05/ex03/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex00/skipThis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day06/ex00/skipThis.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex01/Casting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day06/ex01/Casting.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex01/Casting.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex01/EX01.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day06/ex01/EX01.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex01/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/day06/ex01/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex01/bureaucrat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex01/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day06/ex01/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex01/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex02/Base.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day06/ex02/Base.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex02/Base.o" beforeDir="false" afterPath="$PROJECT_DIR$/day06/ex02/Base.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex02/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/day06/ex02/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex02/casting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex02/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day06/ex02/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day06/ex02/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/day06/ex02/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day08/ex00/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/day08/ex00/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day08/ex00/easyFind.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day08/ex00/easyFind.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day08/ex00/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day08/ex00/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day08/ex01/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/day08/ex01/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day08/ex01/Span.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day08/ex01/Span.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day08/ex01/Span.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/day08/ex01/Span.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day08/ex01/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day08/ex01/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day08/ex01/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/day08/ex01/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day08/ex01/span" beforeDir="false" afterPath="$PROJECT_DIR$/day08/ex01/span" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,18 +102,21 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ael-hiou/Desktop/CPP-MODULES/day05/ex03&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ael-hiou/Desktop/CPP-MODULES/day08/ex02&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day08/ex02" />
+      <recent name="$PROJECT_DIR$/day06/ex01" />
       <recent name="$PROJECT_DIR$/day05/ex03" />
       <recent name="$PROJECT_DIR$/day04/ex02" />
     </key>
@@ -120,7 +128,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="CPP_MODULES" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPP_MODULES" TARGET_NAME="CPP_MODULES" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPP_MODULES" RUN_TARGET_NAME="CPP_MODULES">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -162,7 +170,27 @@
       <workItem from="1671296718533" duration="780000" />
       <workItem from="1671301474371" duration="2280000" />
       <workItem from="1671350430726" duration="5601000" />
-      <workItem from="1671364593935" duration="2084000" />
+      <workItem from="1671364593935" duration="2725000" />
+      <workItem from="1671446698776" duration="4780000" />
+      <workItem from="1671524852732" duration="3911000" />
+      <workItem from="1671608150179" duration="540000" />
+      <workItem from="1671608932814" duration="1713000" />
+      <workItem from="1671611934752" duration="316000" />
+      <workItem from="1671619099754" duration="719000" />
+      <workItem from="1671623013738" duration="3562000" />
+      <workItem from="1671633000731" duration="7696000" />
+      <workItem from="1671647806238" duration="178000" />
+      <workItem from="1671691128302" duration="7470000" />
+      <workItem from="1671705768258" duration="1057000" />
+      <workItem from="1671709280246" duration="2659000" />
+      <workItem from="1671715008625" duration="4789000" />
+      <workItem from="1671724107226" duration="3662000" />
+      <workItem from="1671733646351" duration="6000" />
+      <workItem from="1671780214122" duration="371000" />
+      <workItem from="1672060478821" duration="4989000" />
+      <workItem from="1672072688016" duration="6000" />
+      <workItem from="1672072742285" duration="56000" />
+      <workItem from="1672072806281" duration="9000" />
     </task>
     <servers />
   </component>

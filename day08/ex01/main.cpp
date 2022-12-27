@@ -3,17 +3,18 @@
 int main()
 {
     try {
-        Span sp1 = Span(1);
-        Span sp = Span(5);
-        sp.addNumber(6);
-        sp.addNumber(3);
-        sp.addNumber(17);
-        sp.addNumber(9);
-        sp.addNumber(11);
-        sp1 = sp;
-//        sp.addNumber(9);
-//        std::cout << sp.shortestSpan() << std::endl;
-//        std::cout << sp.longestSpan() << std::endl;
+        int a[20];
+        for (int i = 0; i < 20; i++)
+            a[i] = -1;
+        Span sp = Span(1020);
+        for (int i = 0; i < 1000; i++)
+            sp.addNumber(i);
+        std::cout << sp.shortestSpan() << std::endl;
+        std::cout << sp.longestSpan() << std::endl;
+        sp.addManyNumbers(a, 20);
+        sp.addNumber(-100);
+        sp.displaySpan();
+//        sp.addNumber(100);
     }
     catch(const char *e){
         std::cout << e << std::endl;

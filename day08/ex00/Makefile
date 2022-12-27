@@ -1,5 +1,5 @@
 SRC :=  main.cpp
-NAME := templates
+NAME := iterator
 STANDARD := -std=c++98
 CXXFLAGS := -Wall -Wextra -Werror
 OBJECT_FILES := $(SRC:.cpp=.o)

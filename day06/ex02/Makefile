@@ -1,5 +1,5 @@
 SRC :=  main.cpp Base.cpp
-NAME := casting
+NAME := templates
 STANDARD := -std=c++98
 CXXFLAGS := -Wall -Wextra -Werror
 OBJECT_FILES := $(SRC:.cpp=.o)

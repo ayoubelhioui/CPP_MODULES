@@ -3,7 +3,6 @@
 #include <cstdint>
 
 struct Data{
-public:
     int a;
     float b;
     char c;

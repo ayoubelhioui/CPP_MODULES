@@ -9,23 +9,22 @@ Base::~Base() {
 
 Base *generate(){
     srand(time(0));
-    int randomValue = rand() % 3;
-    if (!randomValue)
+    int randomNumber = rand() % 3;
+    if (!randomNumber)
         return (new ClassA());
-    else if (randomValue == 1)
+    else if (randomNumber == 1)
         return (new ClassB());
     return (new ClassC());
 }
 
 void identify(Base *p){
     if (dynamic_cast<ClassA*>(p))
-        std::cout << 'A' << std::endl;
-    else if (dynamic_cast<ClassB*>(p))
-        std::cout << 'B' << std::endl;
-    else if (dynamic_cast<ClassC*>(p))
-        std::cout << 'C' << std::endl;
-    else
-        std::cout << "Couldn't Cast" << std::endl;
+        {std::cout << 'A' << std::endl; return; };
+    if (dynamic_cast<ClassB*>(p))
+        {std::cout << 'B' << std::endl; return; };
+    if (dynamic_cast<ClassC*>(p))
+        {std::cout << 'C' << std::endl; return;};
+    std::cout << "Couldn't Cast" << std::endl;
 }
 
 void identify(Base &p){
