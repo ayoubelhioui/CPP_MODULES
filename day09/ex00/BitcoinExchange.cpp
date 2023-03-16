@@ -1,26 +1,51 @@
 # include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange() {
-    std::ifstream data;
-    data.open(DATA_FILE_PATH);
-    if (data.fail())
-        throw (std::runtime_error(COULDNT_OPEN_DATA_FILE));
+void BitcoinExchange::_parseCSVFile( void ){
     std::string enteredData;
-    while (getline(data, enteredData))
+    while (getline(this->_dataCSV, enteredData))
     {
-        size_t  commaPosition = enteredData.find(COMMA);
-        if (commaPosition == std::string::npos)
+        size_t  separatorPosition = enteredData.find(COMMA);
+        if (separatorPosition == std::string::npos)
             throw (std::runtime_error(ERROR_IN_DATA_FILE));
-        std::string firstPart = enteredData.substr(0, commaPosition);
-        std::string secondPart = enteredData.substr(commaPosition + 1);
-        this->bitcoinInfo[firstPart] = secondPart;
+        std::string firstPart = enteredData.substr(0, separatorPosition);
+        std::string secondPart = enteredData.substr(separatorPosition + 1);
+        this->_dataCSVInfo[firstPart] = secondPart;
     }
-            std::map<std::string, std::string>::iterator m = this->bitcoinInfo.begin();
-        while (m != this->bitcoinInfo.end())
-        {
-            std::cout << "|" << m->first << "|:|" << m->second << "|" << std::endl;
-            m++;
-        }
+}
+
+BitcoinExchange::BitcoinExchange( void ) {}
+
+void    BitcoinExchange::_startExchanging( void ) {
+    std::string enteredData;
+    while (getline(this->_inputFile, enteredData))
+    {
+
+    }
+}
+
+void    BitcoinExchange::prepareForExchanging( void ) {
+    this->_parseCSVFile();
+    this->_startExchanging();
+}
+BitcoinExchange::BitcoinExchange(const char *inputFile){
+    this->_inputFile.open(inputFile);
+    this->_dataCSV.open(DATA_FILE_PATH);
+    if ((this->_inputFile.fail()) or this->_dataCSV.fail())
+        throw (std::runtime_error(COULDNT_OPEN_FILE));
+//    std::map<std::string, std::string>::iterator m = this->dataCSVInfo.begin();
+//    while (m != this->dataCSVInfo.end())
+//    {
+//        std::cout << "|" << m->first << "|:|" << m->second << "|" << std::endl;
+//        m++;
+//    }
+//    std::cout << "************************" << std::endl;
+//    std::cout << this->inputFileInfo["2012-01-11 "] << std::endl;
+//    std::map<std::string, std::string>::iterator m1 = this->inputFileInfo.begin();
+//    while (m1 != this->inputFileInfo.end())
+//    {
+//        std::cout << "|" << m1->first << "|:|" << m1->second << "|" << std::endl;
+//        m1++;
+//    }
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &oldObj) {
@@ -28,7 +53,8 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &oldObj) {
 }
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &oldObj) {
-    this->bitcoinInfo = oldObj.bitcoinInfo;
+    this->_dataCSVInfo = oldObj._dataCSVInfo;
+    this->_inputFileInfo = oldObj._inputFileInfo;
     return (*this);
 }
 

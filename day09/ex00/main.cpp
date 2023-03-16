@@ -1,13 +1,24 @@
 # include "BitcoinExchange.hpp"
 
-void errorPrinting(const char *message) { std::cout << message << std::endl; }
+void errorPrinting(const char *message) {
+    std::cout << message << std::endl;
+    exit (1);
+}
 
+//void open
 int main(int ac, char **av)
 {
     (void) av;
     if (ac != 2)
         errorPrinting(INVALID_ARGUMENTS);
-    BitcoinExchange bitcoin;
+    try{
+        BitcoinExchange bitcoin(av[1]);
+        bitcoin.prepareForExchanging();
+    }
+    catch(std::runtime_error &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
 //    std::map<std::string, std::string> test;
 //    test["2011-01-01"] = "3";
 //    test["2011-01-04"] = "4";
