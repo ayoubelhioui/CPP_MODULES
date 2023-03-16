@@ -4,7 +4,7 @@
 # include <iostream>
 # include <fstream>
 # include <map>
-
+# include <sstream>
 # define ERROR_IN_DATA_FILE "Error Inside Data File"
 # define COMMA ','
 # define COLUMN '|'
@@ -16,17 +16,17 @@ class BitcoinExchange{
         BitcoinExchange();
         std::ifstream _inputFile;
         std::ifstream _dataCSV;
-        std::map<std::string, std::string> _dataCSVInfo;
-        std::multimap<std::string, std::string> _inputFileInfo;
-        void _parseCSVFile( void );
-        void _startExchanging( void );
+        std::map<std::string, double> _dataCSVInfo;
+        void    _isDateValid( std::string date );
+        void    _parseCSVFile( void );
+        void    _startExchanging( void );
+        void    _parseInputLines( std::string &enteredData );
     public :
-        void prepareForExchanging( void );
-        BitcoinExchange(const char *inputFile);
-        BitcoinExchange(const BitcoinExchange &oldObj);
-        BitcoinExchange &operator =(const BitcoinExchange &oldObj);
+        void    prepareForExchanging( void );
+        BitcoinExchange( const char *inputFile );
+        BitcoinExchange( const BitcoinExchange &oldObj );
+        BitcoinExchange &operator =( const BitcoinExchange &oldObj );
         ~BitcoinExchange( void );
-        void fillingMapFromFile();
 };
 
 #endif

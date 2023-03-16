@@ -8,17 +8,17 @@ void errorPrinting(const char *message) {
 //void open
 int main(int ac, char **av)
 {
-    (void) av;
     if (ac != 2)
         errorPrinting(INVALID_ARGUMENTS);
     try{
         BitcoinExchange bitcoin(av[1]);
         bitcoin.prepareForExchanging();
     }
-    catch(std::runtime_error &e)
+    catch(std::exception &e)
     {
         std::cout << e.what() << std::endl;
     }
+
 //    std::map<std::string, std::string> test;
 //    test["2011-01-01"] = "3";
 //    test["2011-01-04"] = "4";
