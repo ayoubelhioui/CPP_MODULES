@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="CPP_MODULES" targetName="CPP_MODULES" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2d45da46-867e-4f81-af6d-0f478250d8f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/day09/ex01/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day09/ex01/RPN.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day09/ex01/RPN.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day01/ex04/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/day01/ex04/main.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2022" />
+    <option name="minorVersion" value="2.4" />
+  </component>
+  <component name="ProjectId" id="2GtpkgtLfCorvxwOfS7wAUy60P5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Project.color": "461142",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "/Users/ael-hiou/Desktop/CPP-MODULES/day08/ex02",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editing.templates",
+    "structure.view.defaults.are.configured": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day08/ex02" />
+      <recent name="$PROJECT_DIR$/day06/ex01" />
+      <recent name="$PROJECT_DIR$/day05/ex03" />
+      <recent name="$PROJECT_DIR$/day04/ex02" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day09/ex00" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/day02/ex01" />
+      <recent name="$PROJECT_DIR$/day02/ex00" />
+      <recent name="$PROJECT_DIR$/day02" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2d45da46-867e-4f81-af6d-0f478250d8f6" name="Changes" comment="" />
+      <created>1667217882221</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667217882221</updated>
+      <workItem from="1667217889396" duration="5290000" />
+      <workItem from="1667224310572" duration="1228000" />
+      <workItem from="1670249449578" duration="8017000" />
+      <workItem from="1670265297203" duration="8000" />
+      <workItem from="1670268815427" duration="139000" />
+      <workItem from="1670313712617" duration="5777000" />
+      <workItem from="1670327022433" duration="1749000" />
+      <workItem from="1670398969293" duration="3334000" />
+      <workItem from="1670413063967" duration="1663000" />
+      <workItem from="1670418697227" duration="6004000" />
+      <workItem from="1670437918851" duration="6000" />
+      <workItem from="1670486656113" duration="8243000" />
+      <workItem from="1670503051251" duration="8136000" />
+      <workItem from="1670573975069" duration="3000" />
+      <workItem from="1671123921794" duration="671000" />
+      <workItem from="1671124990266" duration="911000" />
+      <workItem from="1671129662088" duration="1466000" />
+      <workItem from="1671177954801" duration="4000" />
+      <workItem from="1671187547557" duration="752000" />
+      <workItem from="1671196964478" duration="11488000" />
+      <workItem from="1671215746338" duration="2601000" />
+      <workItem from="1671265065200" duration="173000" />
+      <workItem from="1671265267435" duration="1136000" />
+      <workItem from="1671273540508" duration="856000" />
+      <workItem from="1671277515781" duration="8141000" />
+      <workItem from="1671296718533" duration="780000" />
+      <workItem from="1671301474371" duration="2280000" />
+      <workItem from="1671350430726" duration="5601000" />
+      <workItem from="1671364593935" duration="2725000" />
+      <workItem from="1671446698776" duration="4780000" />
+      <workItem from="1671524852732" duration="3911000" />
+      <workItem from="1671608150179" duration="540000" />
+      <workItem from="1671608932814" duration="1713000" />
+      <workItem from="1671611934752" duration="316000" />
+      <workItem from="1671619099754" duration="719000" />
+      <workItem from="1671623013738" duration="3562000" />
+      <workItem from="1671633000731" duration="7696000" />
+      <workItem from="1671647806238" duration="178000" />
+      <workItem from="1671691128302" duration="7470000" />
+      <workItem from="1671705768258" duration="1057000" />
+      <workItem from="1671709280246" duration="2659000" />
+      <workItem from="1671715008625" duration="4789000" />
+      <workItem from="1671724107226" duration="3662000" />
+      <workItem from="1671733646351" duration="6000" />
+      <workItem from="1671780214122" duration="371000" />
+      <workItem from="1672060478821" duration="4989000" />
+      <workItem from="1672072688016" duration="6000" />
+      <workItem from="1672072742285" duration="56000" />
+      <workItem from="1672072806281" duration="9000" />
+      <workItem from="1678872252144" duration="700000" />
+      <workItem from="1678873394114" duration="164000" />
+      <workItem from="1678873751701" duration="297000" />
+      <workItem from="1678883536234" duration="43000" />
+      <workItem from="1678883739882" duration="51000" />
+      <workItem from="1678884016131" duration="1489000" />
+      <workItem from="1678888568584" duration="2000" />
+      <workItem from="1678889023110" duration="4812000" />
+      <workItem from="1678957857528" duration="1683000" />
+      <workItem from="1678960308687" duration="468000" />
+      <workItem from="1678960796769" duration="5024000" />
+      <workItem from="1678966211087" duration="81000" />
+      <workItem from="1678966733817" duration="13338000" />
+      <workItem from="1678994538277" duration="507000" />
+      <workItem from="1679041738338" duration="2838000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

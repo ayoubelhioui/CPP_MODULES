@@ -37,7 +37,7 @@ int main(int ac, char **av)
 
     firstStringLength = strlen(av[2]);
     secondStringLength = strlen(av[3]);
-    if (inputFile.is_open())
+    if (_inputFile.is_open())
     {
         while (getline(inputFile, enteredString))
         {

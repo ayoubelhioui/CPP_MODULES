@@ -1,0 +1,5 @@
+cmake-build-debug/
+*.o
+.DS_Store
+btc
+CMakeLists.txt
