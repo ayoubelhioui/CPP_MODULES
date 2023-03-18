@@ -4,6 +4,7 @@ void    errorPrinting(const char *message){
     std::cout << message << std::endl;
     exit (1);
 }
+
 int main(int ac, char **av)
 {
     if (ac == 1)
@@ -11,18 +12,18 @@ int main(int ac, char **av)
     try
     {
         RPN rpn;
-        std::cout << av[i] << std::endl;
-        char *currentValue = av[i];
-        if (!strcmp(currentValue, PLUS) or !strcmp(currentValue, MINUS) or !strcmp(currentValue, DIVIDE) or !strcmp(currentValue, MULTIPLY))
-            rpn.performOperation(currentValue);
-        else if (isnumber(atoi(currentValue)))
+        std::stringstream str((std::string(av[1])));
+        std::string currentValue;
+        while (str >> currentValue)
         {
-            std::cout << "im here" << std::endl;
-            rpn._dataHolder.push(atoi(currentValue));
+            if (currentValue == PLUS or currentValue == MINUS or currentValue == DIVIDE or currentValue == MULTIPLY)
+                rpn.performOperation(currentValue);
+            else if (isdigit(currentValue[0]))
+                rpn.dataHolder.push(stoi(currentValue));
+            else
+                throw (std::runtime_error("Error"));
         }
-        else
-            throw (std::runtime_error("You entered an invalid character"));
-        std::cout << rpn._dataHolder.top() << std::endl;
+        std::cout << rpn.dataHolder.top() << std::endl;
     }
     catch(std::exception &e)
     {

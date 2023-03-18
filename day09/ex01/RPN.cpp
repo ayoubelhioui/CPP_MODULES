@@ -1,40 +1,35 @@
 # include "RPN.hpp"
+
 RPN::RPN( void ) { }
 
-RPN::RPN(const RPN &oldObj) {
-    *this = oldObj;
-}
+RPN::RPN(const RPN &oldObj) { *this = oldObj; }
 
 
 RPN &RPN::operator=(const RPN &oldObj) {
-    this->_dataHolder = oldObj._dataHolder;
+    this->dataHolder = oldObj.dataHolder;
     return *this;
 }
 
 RPN::~RPN() { }
 
-void RPN::pushNumber(int enteredNumber) {
-    this->_dataHolder.push(enteredNumber);
-}
-
-void RPN::performOperation( char *_operator) {
+void RPN::performOperation( std::string &_operator) {
     int first = 0, second = 0;
-    if (this->_dataHolder.size() == 0 || this->_dataHolder.size() == 1)
+    if (this->dataHolder.size() == 0 || this->dataHolder.size() == 1)
         throw (std::runtime_error("Stack must contains 2 numbers at least."));
-    first = this->_dataHolder.top();
-    this->_dataHolder.pop();
-    second = this->_dataHolder.top();
-    this->_dataHolder.pop();
-    if (!strcmp(_operator, "*"))
-        this->_dataHolder.push(first * second);
-    else if (!strcmp(_operator, "+"))
-        this->_dataHolder.push(first + second);
-    else if (!strcmp(_operator, "-"))
-        this->_dataHolder.push(first - second);
-    else if (!strcmp(_operator, "/"))
+    first = this->dataHolder.top();
+    this->dataHolder.pop();
+    second = this->dataHolder.top();
+    this->dataHolder.pop();
+    if (_operator ==  PLUS)
+        this->dataHolder.push(second + first);
+    else if (_operator == MULTIPLY)
+        this->dataHolder.push(second * first);
+    else if (_operator == MINUS)
+        this->dataHolder.push(second - first);
+    else if (_operator ==  DIVIDE)
     {
         if (second == 0)
             throw (std::runtime_error("Cannot Divide a number by 0"));
-        this->_dataHolder.push(first / second);
+        this->dataHolder.push(second / first);
     }
 }
