@@ -2,18 +2,20 @@
 #define PMERGE_HPP_
 
 # include <iostream>
-# include <set>
+# include <deque>
 # include <vector>
 
 # define INVALID_ARGUMENTS "Number Of arguments is invalid"
 class PMerge{
 private :
-	std::set<int> firstContainer;
-	std::vector<int> secondContainer;
+    std::vector<int> _firstContainer;
+	std::deque<int> _secondContainer;
 public :
 	PMerge();
 	PMerge(const PMerge &oldObj);
 	PMerge &operator =(const PMerge &oldObj);
 	~PMerge();
+	void 	fillContainers( int ac, char **av );
+	void 	sortWithVector( void );
 };
 #endif
