@@ -13,7 +13,8 @@ int main(int ac, char **av)
     try{
         PMerge pmerge;
         pmerge.fillContainers(ac, av);
-//        pmerge.sortWithVector();
+        pmerge.sortWithVector();
+        pmerge.printContainer();
     }
     catch (std::exception &e)
     {
