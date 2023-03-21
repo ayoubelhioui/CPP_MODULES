@@ -10,9 +10,8 @@ class PMerge{
 private :
     std::vector<int> _firstContainer;
     std::deque<int> _secondContainer;
-    void    _mergeSort( int left, int right );
-    void 	_merge( int left, int right, int middle );
-    void    _insertionSort( int left, int right );
+    void    _mergeSort( std::vector<int> &data );
+    void    _insertionSort( std::vector<int> &data );
 public :
 	PMerge();
 	PMerge( const PMerge &oldObj );

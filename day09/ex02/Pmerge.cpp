@@ -26,31 +26,17 @@ void    PMerge::fillContainers(int ac, char **av) {
     }
 }
 
-
-void    PMerge::_merge(int start, int end, int middle) {
-    int l = start, m = middle + 1, size = end - start + 1, resultIndex = 0;
-    std::vector<int> result(size, 0);
-    while (l <= middle and m <= end)
-        result[resultIndex++] = (this->_firstContainer[l] < this->_firstContainer[m]) ? this->_firstContainer[l++] : this->_firstContainer[m++];
-    while (l <= middle)
-        result[resultIndex++] = this->_firstContainer[l++];
-    while (m <= end)
-        result[resultIndex++] = this->_firstContainer[m++];
-    for (int i = 0; i < size; i++)
-        this->_firstContainer[i + start] = result[i];
-}
-
-void    PMerge::_insertionSort(int start, int end) {
-    for (int i = start + 1; i < end; i++)
+void    PMerge::_insertionSort( std::vector<int> &data) {
+    for (unsigned int i = 1; i < data.size(); i++)
     {
         int x = i - 1;
-        int save = this->_firstContainer[i];
-        while (x >= 0 and this->_firstContainer[x] > save)
+        int save = data[i];
+        while (x >= 0 and data[x] > save)
         {
-            this->_firstContainer[x + 1] = this->_firstContainer[x];
+            data[x + 1] = data[x];
             x--;
         }
-        this->_firstContainer[x + 1] = save;
+        data[x + 1] = save;
     }
 }
 
@@ -59,18 +45,20 @@ void    PMerge::printContainer( void ) {
         std::cout  << this->_firstContainer[i] << std::endl;
 }
 
-void    PMerge::_mergeSort(int start, int end) {
-    if (end - start <= 20)
+void    PMerge::_mergeSort( std::vector<int> &data ) {
+    if (data.size() <= 20)
     {
-        this->_insertionSort(start, end);
+        this->_insertionSort(data);
         return ;
     }
-    int middle = (start + end) / 2;
-    this->_mergeSort(start, middle);
-    this->_mergeSort(middle + 1, end);
-    this->_merge(start, end, middle);
+    int middle = (data.size()) / 2;
+    std::vector<int> firstPart(data.begin(), data.begin() + middle);
+    std::vector<int> secondPart(data.begin() + middle, data.end());
+    this->_mergeSort(firstPart);
+    this->_mergeSort(secondPart);
+    std::merge(firstPart.begin(), firstPart.end(), secondPart.begin(), secondPart.end(), data.begin());
 }
 
 void    PMerge::sortWithVector( void ) {
-    this->_mergeSort(0, this->_firstContainer.size());
+    this->_mergeSort(this->_firstContainer);
 }
