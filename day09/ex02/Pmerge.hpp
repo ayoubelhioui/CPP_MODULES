@@ -10,7 +10,7 @@ class PMerge{
 private :
     std::vector<int> _firstContainer;
     std::deque<int> _secondContainer;
-    void    _mergeSort( std::vector<int> &data );
+    void    _mergeInsertionSort( void );
     void    _insertionSort( std::vector<int> &data );
 public :
 	PMerge();

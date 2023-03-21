@@ -45,18 +45,18 @@ void    PMerge::printContainer( void ) {
         std::cout  << this->_firstContainer[i] << std::endl;
 }
 
-void    PMerge::_mergeSort( std::vector<int> &data ) {
-    if (data.size() <= 20)
+void    PMerge::_mergeInsertionSort( void ) {
+    int vectorSize = this->_firstContainer.size();
+    int size = (vectorSize % 2) ? vectorSize / 2 : (vectorSize / 2) + 1;
+    std::vector<int> firstPart(vectorSize / 2);
+    std::vector<int> secondPart(size);
+    for (unsigned int i = 0; i < vectorSize - 1; i+=2)
     {
-        this->_insertionSort(data);
-        return ;
+        int smallest = std::min(this->_firstContainer[i], this->_firstContainer[i + 1]);
+        int largest = std::min(this->_firstContainer[i], this->_firstContainer[i + 1]);
+        firstPart.push_back(smallest);
+        secondPart.push_back(largest);
     }
-    int middle = (data.size()) / 2;
-    std::vector<int> firstPart(data.begin(), data.begin() + middle);
-    std::vector<int> secondPart(data.begin() + middle, data.end());
-    this->_mergeSort(firstPart);
-    this->_mergeSort(secondPart);
-    std::merge(firstPart.begin(), firstPart.end(), secondPart.begin(), secondPart.end(), data.begin());
 }
 
 void    PMerge::sortWithVector( void ) {
