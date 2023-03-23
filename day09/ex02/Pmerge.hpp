@@ -1,5 +1,5 @@
-#ifndef PMERGE_HPP_
-#define PMERGE_HPP_
+# ifndef PMERGE_HPP_
+# define PMERGE_HPP_
 
 # include <iostream>
 # include <deque>
@@ -10,15 +10,14 @@ class PMerge{
 private :
     std::vector<int> _firstContainer;
     std::deque<int> _secondContainer;
-    void    _mergeInsertionSort( void );
-    void    _insertionSort( std::vector<int> &data );
 public :
 	PMerge();
 	PMerge( const PMerge &oldObj );
     PMerge &operator =( const PMerge &oldObj );
     ~PMerge();
-    void    printContainer( void );
+    void    printContainer( std::string message);
     void 	fillContainers( int ac, char **av );
-	void 	sortWithVector( void );
+  	void    sortVector( void );
+    void    sortDeque( void );
 };
 #endif

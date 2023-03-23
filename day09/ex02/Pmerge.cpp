@@ -26,39 +26,71 @@ void    PMerge::fillContainers(int ac, char **av) {
     }
 }
 
-void    PMerge::_insertionSort( std::vector<int> &data) {
-    for (unsigned int i = 1; i < data.size(); i++)
-    {
-        int x = i - 1;
-        int save = data[i];
-        while (x >= 0 and data[x] > save)
-        {
-            data[x + 1] = data[x];
-            x--;
-        }
-        data[x + 1] = save;
-    }
-}
 
-void    PMerge::printContainer( void ) {
+void    PMerge::printContainer( std::string message ) {
+    std::cout << message;
     for (unsigned int i = 0; i < _firstContainer.size(); i++)
-        std::cout  << this->_firstContainer[i] << std::endl;
+        std::cout  << this->_firstContainer[i] << " ";
+    std::cout << std::endl;
 }
 
-void    PMerge::_mergeInsertionSort( void ) {
-    int vectorSize = this->_firstContainer.size();
-    int size = (vectorSize % 2) ? vectorSize / 2 : (vectorSize / 2) + 1;
-    std::vector<int> firstPart(vectorSize / 2);
-    std::vector<int> secondPart(size);
-    for (unsigned int i = 0; i < vectorSize - 1; i+=2)
+bool    sortByGreaterValue(std::pair<int, int> p1, std::pair<int, int> p2){
+    return (p1.second < p2.second);
+}
+
+void    PMerge::sortDeque( void ) {
+    std::deque<std::pair<int, int> > pairs;
+    std::deque<int> S;
+    std::deque<int> pend;
+    std::cout << std::endl;
+    if ((this->_secondContainer.size() % 2))
+        pend.push_back(this->_secondContainer.back());
+    for (size_t i = 1; i < this->_secondContainer.size(); i+=2)
     {
-        int smallest = std::min(this->_firstContainer[i], this->_firstContainer[i + 1]);
-        int largest = std::min(this->_firstContainer[i], this->_firstContainer[i + 1]);
-        firstPart.push_back(smallest);
-        secondPart.push_back(largest);
+        if (this->_secondContainer[i - 1] > this->_secondContainer[i])
+            std::swap(this->_secondContainer[i - 1], this->_secondContainer[i]);
+        pairs.push_back(std::make_pair(this->_secondContainer[i - 1], this->_secondContainer[i]));
     }
+    std::sort(pairs.begin(), pairs.end(), sortByGreaterValue);
+    for (size_t i = 0; i < pairs.size(); i++)
+    {
+        S.push_back(pairs[i].second);
+        pend.push_back(pairs[i].first);
+    }
+    for (size_t i = 0; i < pend.size(); i++)
+    {
+        std::deque<int>::iterator it = std::upper_bound(S.begin(), S.end(), pend[i]);
+        S.insert(it, pend[i]);
+    }
+    for (size_t i = 0; i < S.size(); i++)
+        this->_secondContainer[i] = S[i];
 }
 
-void    PMerge::sortWithVector( void ) {
-    this->_mergeSort(this->_firstContainer);
+
+void    PMerge::sortVector( void ) {
+    std::vector<std::pair<int, int> > pairs;
+    std::vector<int> S;
+    std::vector<int> pend;
+    if ((this->_firstContainer.size() % 2))
+        pend.push_back(this->_firstContainer.back());
+    for (size_t i = 1; i < this->_firstContainer.size(); i+=2)
+    {
+        if (this->_firstContainer[i - 1] > this->_firstContainer[i])
+            std::swap(this->_firstContainer[i - 1], this->_firstContainer[i]);
+        pairs.push_back(std::make_pair(this->_firstContainer[i - 1], this->_firstContainer[i]));
+    }
+    std::sort(pairs.begin(), pairs.end(), sortByGreaterValue);
+    for (size_t i = 0; i < pairs.size(); i++)
+    {
+        S.push_back(pairs[i].second);
+        pend.push_back(pairs[i].first);
+    }
+    for (size_t i = 0; i < pend.size(); i++)
+    {
+        std::vector<int>::iterator it = std::upper_bound(S.begin(), S.end(), pend[i]);
+        S.insert(it, pend[i]);
+    }
+    for (size_t i = 0; i < S.size(); i++)
+        this->_firstContainer[i] = S[i];
 }
+
