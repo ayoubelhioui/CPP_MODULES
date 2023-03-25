@@ -1,6 +1,6 @@
 #include <sys/time.h>
 # include "Pmerge.hpp"
-
+# include <array>
 void    errorPrinting(const char *message)
 {
     std::cout << message << std::endl;

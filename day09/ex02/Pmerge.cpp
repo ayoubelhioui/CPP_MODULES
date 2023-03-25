@@ -20,12 +20,11 @@ void    PMerge::fillContainers(int ac, char **av) {
         std::string number(av[i]);
         if (!isdigit(number[0]))
             throw ("You entered an invalid argument.");
-        int trueNumber = std::stoi(av[i]);
+        int trueNumber = atoi(av[i]);
         this->_firstContainer.push_back(trueNumber);
         this->_secondContainer.push_back(trueNumber);
     }
 }
-
 
 void    PMerge::printContainer( std::string message ) {
     std::cout << message;
@@ -34,7 +33,7 @@ void    PMerge::printContainer( std::string message ) {
     std::cout << std::endl;
 }
 
-bool    sortByGreaterValue(std::pair<int, int> p1, std::pair<int, int> p2){
+bool    sortBySecond(std::pair<int, int> p1, std::pair<int, int> p2){
     return (p1.second < p2.second);
 }
 
@@ -51,7 +50,7 @@ void    PMerge::sortDeque( void ) {
             std::swap(this->_secondContainer[i - 1], this->_secondContainer[i]);
         pairs.push_back(std::make_pair(this->_secondContainer[i - 1], this->_secondContainer[i]));
     }
-    std::sort(pairs.begin(), pairs.end(), sortByGreaterValue);
+    std::sort(pairs.begin(), pairs.end(), sortBySecond);
     for (size_t i = 0; i < pairs.size(); i++)
     {
         S.push_back(pairs[i].second);
@@ -79,7 +78,7 @@ void    PMerge::sortVector( void ) {
             std::swap(this->_firstContainer[i - 1], this->_firstContainer[i]);
         pairs.push_back(std::make_pair(this->_firstContainer[i - 1], this->_firstContainer[i]));
     }
-    std::sort(pairs.begin(), pairs.end(), sortByGreaterValue);
+    std::sort(pairs.begin(), pairs.end(), sortBySecond);
     for (size_t i = 0; i < pairs.size(); i++)
     {
         S.push_back(pairs[i].second);
