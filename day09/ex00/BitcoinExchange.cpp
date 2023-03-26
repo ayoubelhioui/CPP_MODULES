@@ -10,14 +10,9 @@ void BitcoinExchange::_parseCSVFile( void ){
         if (separatorPosition == std::string::npos)
             throw (std::runtime_error(ERROR_IN_DATA_FILE));
         std::string firstPart = enteredData.substr(0, separatorPosition);
-        double secondPart = stod(enteredData.substr(separatorPosition + 1));
+        double secondPart = std::atof(enteredData.substr(separatorPosition + 1).c_str());
         this->_dataCSVInfo[firstPart] = secondPart;
     }
-}
-
-bool    isValid(char &a)
-{
-    return (isnumber(a) or a == '-' or a == ' ' or a == '|');
 }
 
 void    BitcoinExchange::_isDateValid(std::string date) {
@@ -57,12 +52,14 @@ int     countMinus(std::string &enteredData)
 }
 
 void    BitcoinExchange::_parseInputLines(std::string &enteredData) {
-    if (std::find_if(begin(enteredData), end(enteredData), isValid) == end(enteredData))
-        throw (std::runtime_error("Error: date must contain numbers only."));
+    for (size_t i = 0; i < enteredData.size(); i++)
+        if (!isnumber(enteredData[i]) and enteredData[i] != '-'
+            and enteredData[i] != ' ' and enteredData[i] != '|' and enteredData[i] != '.')
+            throw (std::runtime_error("Error: invalid input : " + enteredData));
     int minusCount = countMinus(enteredData);
     if (minusCount != 2)
         throw (std::runtime_error("Error: invalid input : " + enteredData));
-    long value;
+    double value;
     std::string save;
     std::string  stt;
     std::string column;
@@ -82,22 +79,19 @@ void    BitcoinExchange::_parseInputLines(std::string &enteredData) {
     str >> st;
      if (st.empty())
         throw (std::runtime_error("Error: bad input => " + enteredData));
-    value = std::stod(st);
+    value = std::atof(st.c_str());
     if (value > 1000)
         throw (std::runtime_error("Error: too large number."));
     if (value < 0)
         throw (std::runtime_error("Error: not a positive number."));
-    std::map<std::string, double>::iterator it = this->_dataCSVInfo.find(save);
-    if (it != this->_dataCSVInfo.end())
-        std::cout << save << " => " << value << " = " << value * it->second << std::endl;
-    else
-    {
-        it = this->_dataCSVInfo.lower_bound(save);
-        it--;
-        std::cout << save << " => " << value << " = " << value * it->second << std::endl;
-    }
+    std::map<std::string, double>::iterator it = this->_dataCSVInfo.upper_bound(save);
+    if (it == this->_dataCSVInfo.begin())
+        throw (std::runtime_error("Error: bad input => " + enteredData));
+    it--;
+    std::cout << save << " => " << value << " = " << value * it->second << std::endl;
 
 }
+
 BitcoinExchange::BitcoinExchange( void ) {}
 
 void    BitcoinExchange::_startExchanging( void ) {

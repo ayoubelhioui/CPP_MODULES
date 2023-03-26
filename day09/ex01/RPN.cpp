@@ -28,7 +28,7 @@ void RPN::performOperation( std::string &_operator) {
         this->dataHolder.push(second - first);
     else if (_operator ==  DIVIDE)
     {
-        if (second == 0)
+        if (first == 0)
             throw (std::runtime_error("Cannot Divide a number by 0"));
         this->dataHolder.push(second / first);
     }

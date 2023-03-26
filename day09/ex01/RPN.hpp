@@ -1,5 +1,5 @@
-#ifndef _RPN_HPP_
-#define _RPN_HPP_
+# ifndef _RPN_HPP_
+# define _RPN_HPP_
 
 # include <iostream>
 # include <stack>

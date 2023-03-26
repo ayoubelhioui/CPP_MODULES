@@ -5,6 +5,14 @@ void    errorPrinting(const char *message){
     exit (1);
 }
 
+bool isNumber(std::string &currentValue)
+{
+    for (size_t i = 0; i < currentValue.size(); i++)
+        if (!isdigit((currentValue[i])))
+            return (false);
+    return (true);
+}
+
 int main(int ac, char **av)
 {
     if (ac == 1)
@@ -18,8 +26,9 @@ int main(int ac, char **av)
         {
             if (currentValue == PLUS or currentValue == MINUS or currentValue == DIVIDE or currentValue == MULTIPLY)
                 rpn.performOperation(currentValue);
-            else if (isdigit(currentValue[0]))
-                rpn.dataHolder.push(stoi(currentValue));
+            else if (isNumber(currentValue))
+                for (size_t i = 0; i < currentValue.size(); i++)
+                    rpn.dataHolder.push(currentValue[i] - '0');
             else
                 throw (std::runtime_error("Error"));
         }

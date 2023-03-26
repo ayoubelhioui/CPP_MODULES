@@ -8,7 +8,7 @@
 # define ERROR_IN_DATA_FILE "Error Inside Data File"
 # define COMMA ','
 # define COLUMN '|'
-# define COULDNT_OPEN_FILE "Couldn't Open File"
+# define COULDNT_OPEN_FILE "Error: could not open file."
 # define DATA_FILE_PATH "./data.csv"
 # define INVALID_ARGUMENTS "Number Of arguments is invalid"
 class BitcoinExchange{
